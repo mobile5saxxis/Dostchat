@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ebs.android.sdk"
+    android:versionCode="2"
+    android:versionName="2.6" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="24" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.ebs.android.sdk.PaymentDetailActivity"
+            android:label="@string/title_activity_payment_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ebs.android.sdk.PaymentActivity"
+            android:label="@string/title_activity_payment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.ebs.android.sdk.WebViewActivity"
+            android:label="@string/title_activity_webview"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateVisible|stateAlwaysHidden" 
+           >
+        </activity>
+        <activity
+            android:name="com.ebs.android.sdk.EBSHomeConfigurableActivity"
+            android:label="@string/title_activity_test__transaction_details"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ebs.android.sdk.PaymentFailureActivity"
+            android:label="@string/title_activity_payment_failure" >
+        </activity>
+        <activity
+            android:name="com.ebs.android.sdk.IdleTimeOut"
+            android:label="@string/title_activity_idle_time_out" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_chat"
+            android:title="Chat" />
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_sos"
+            android:icon="@drawable/ic_sos"
+            android:title="SOS" />
+    </group>
+
+    <!--<group
+        android:id="@+id/group2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_mob_rec"
+            android:icon="@drawable/ic_mobile"
+            android:title="Mobile Recharge" />
+    </group>
+
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_dth_rec"
+            android:icon="@drawable/ic_dth"
+            android:title="DTH Recharge" />
+    </group>
+
+    <group
+        android:id="@+id/group4"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_dc_rec"
+            android:icon="@drawable/ic_data_card"
+            android:title="Datacard" />
+    </group>
+
+    <group
+        android:id="@+id/group5"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_ec_rec"
+            android:icon="@drawable/ic_electric"
+            android:title="Electricity" />
+    </group>-->
+
+    <group
+        android:id="@+id/group6"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/ic_wallet"
+            android:title="Wallet" />
+    </group>
+
+    <group
+        android:id="@+id/group7"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/settings" />
+    </group>
+
+    <group
+        android:id="@+id/group8"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_facebook"
+            android:icon="@drawable/ic_facebook"
+            app:showAsAction="never"
+            android:actionLayout="@layout/menu_action_icons_layout"
+            android:title="@string/facebook" />
+    </group>
+
+    <!--<group
+        android:id="@+id/group8"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_facebook"
+            android:icon="@drawable/ic_facebook"
+            android:title="" />
+    </group>-->
+
+    <group
+        android:id="@+id/group9"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_twitter"
+            android:icon="@drawable/ic_twitter"
+            android:title="@string/twitter" />
+    </group>
+
+    <group
+        android:id="@+id/group10"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_youtube"
+            android:icon="@drawable/ic_youtube"
+            android:title="@string/youtube" />
+    </group>
+
+    <group
+        android:id="@+id/group11"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_google_plus"
+            android:icon="@drawable/ic_google_plus"
+            android:title="@string/google_plus" />
+    </group>
+
+</menu>

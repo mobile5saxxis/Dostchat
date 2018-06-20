@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <RelativeLayout
+        android:id="@+id/rl_credit_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_bg"
+        android:padding="10dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/topText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowDx="0"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:text="Credit Card"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_inner_creditcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_credit_header"
+        android:layout_margin="15dp"
+        android:background="@drawable/container_dropshadow"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/tv_creditcard_cardtype_placeholder"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:text="Select Credit Card Type" />
+
+        <RelativeLayout
+            android:id="@+id/rl_creditcard_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_creditcard_cardtype_placeholder"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_block_background" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/Imv_creditcard_selected_thumbnail"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="1dp" />
+
+            <EditText
+                android:id="@+id/ed_creditcard_type"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/Imv_creditcard_selected_thumbnail"
+                android:background="@drawable/edit_text_block_background"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:drawableRight="@drawable/dropbtn"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Select Card Type"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/edittext_grey"
+                android:textSize="16sp" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_credicard_payment"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/rl_creditcard_type"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/tv_credit_nameoncard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name on Card" />
+
+            <EditText
+                android:id="@+id/ed_credit_nameoncard"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_credit_nameoncard"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_text_block_background"
+                android:inputType="text"
+                android:nextFocusDown="@+id/ed_credit_cardno_box1"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/tv_credit_cardnumber_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ed_credit_nameoncard"
+                android:layout_marginTop="5dp"
+                android:text="Card Number"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <LinearLayout
+                android:id="@+id/ll_credit_cardNo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_credit_cardnumber_placeholder"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/ed_credit_cardno_box1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/edit_text_block_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:nextFocusDown="@+id/ed_credit_cardno_box2"
+                    android:padding="6dp" />
+
+                <EditText
+                    android:id="@+id/ed_credit_cardno_box2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/edit_text_block_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:nextFocusDown="@+id/ed_credit_cardno_box3"
+                    android:padding="6dp" />
+
+                <EditText
+                    android:id="@+id/ed_credit_cardno_box3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/edit_text_block_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:nextFocusDown="@+id/ed_credit_cardno_box4"
+                    android:padding="6dp" />
+
+                <EditText
+                    android:id="@+id/ed_credit_cardno_box4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/edit_text_block_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="7"
+                    android:padding="6dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_credit_card_expiry_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_credit_cardNo"
+                android:layout_marginTop="5dp"
+                android:text="Card Expiry"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <LinearLayout
+                android:id="@+id/ll_credit_expiry_mmyy"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_credit_card_expiry_placeholder" >
+
+                <Spinner
+                    android:id="@+id/sp_credit_cardexpiry_mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1" />
+
+                <Spinner
+                    android:id="@+id/sp_credit_cardexpiry_yy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_credit_card_cvv_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_credit_expiry_mmyy"
+                android:layout_marginTop="5dp"
+                android:text="Card CVV"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/ed_credit_cvv_no"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_credit_card_cvv_placeholder"
+                android:background="@drawable/edit_text_block_background"
+                android:ems="10"
+                android:inputType="number"
+                android:padding="6dp" />
+
+            <ImageView
+                android:id="@+id/imv_credit_samplecvv_card"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/tv_credit_card_cvv_placeholder"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/ed_credit_cvv_no"
+                android:src="@drawable/img_cvv" />
+
+            <RelativeLayout
+                android:id="@+id/rl_credit_insideOutside"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imv_credit_samplecvv_card"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tv_credit_cardissued_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Card Issued"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <RadioGroup
+                    android:id="@+id/rg_expiry_insideOutside"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_cardissued_placeholder"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/rb_credit_insideOutside_inside"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Inside India"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <RadioButton
+                        android:id="@+id/rb_credit_insideOutside_outside"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outside India"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_credit_outside_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_credit_insideOutside"
+                android:layout_marginTop="5dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Card Issued"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_nameoncard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_placeholder"
+                    android:layout_marginTop="5dp"
+                    android:text="Name"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <LinearLayout
+                    android:id="@+id/ll_credit_outsidedetails_namedetails"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_nameoncard"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <Spinner
+                        android:id="@+id/sp_credit_outsidedetails_name_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.5" />
+
+                    <EditText
+                        android:id="@+id/ed_credit_outsidedetails_firstname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="6.5"
+                        android:background="@drawable/edit_text_block_background"
+                        android:hint="Firstname"
+                        android:inputType="text"
+                        android:nextFocusDown="@+id/ed_credit_outsidedetails_middlename"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_credit_outsidedetails_namedetails_surnamelastname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_credit_outsidedetails_namedetails"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed_credit_outsidedetails_middlename"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="4.5"
+                        android:background="@drawable/edit_text_block_background"
+                        android:hint="Middle"
+                        android:inputType="text"
+                        android:nextFocusDown="@+id/ed_credit_outsidedetails_lastname"
+                        android:padding="10dp" />
+
+                    <EditText
+                        android:id="@+id/ed_credit_outsidedetails_lastname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="5.5"
+                        android:background="@drawable/edit_text_block_background"
+                        android:hint="Lastname"
+                        android:inputType="text"
+                        android:nextFocusDown="@+id/ed_credit_outsidedetails_lastname"
+                        android:padding="10dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_address_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_credit_outsidedetails_namedetails_surnamelastname"
+                    android:text="Address" />
+
+                <EditText
+                    android:id="@+id/ed_credit_outsidedetails_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_address_placeholder"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_block_background"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_city_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ed_credit_outsidedetails_address"
+                    android:text="City" />
+
+                <EditText
+                    android:id="@+id/ed_credit_outsidedetails_city"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_city_placeholder"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_block_background"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_postalcode_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ed_credit_outsidedetails_city"
+                    android:text="Postal Code" />
+
+                <EditText
+                    android:id="@+id/ed_credit_outsidedetails_postalcode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_postalcode_placeholder"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_text_block_background"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_credit_outsidedetails_country_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ed_credit_outsidedetails_postalcode"
+                    android:text="Country" />
+
+                <EditText
+                    android:id="@+id/ed_credit_outsidedetails_country"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_credit_outsidedetails_country_placeholder"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/edit_text_block_background"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:drawableRight="@drawable/dropbtn"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Select Country"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/edittext_grey"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/btn_credit_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_credit_outside_details"
+                android:layout_marginTop="5dp"
+                android:button="@drawable/checkbox_selector"
+                android:checked="true"
+                android:text="@string/chk_save_card" />
+
+            <TextView
+                android:id="@+id/more_info_credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_credit_outside_details"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/btn_credit_checkbox"
+                android:layout_toEndOf="@+id/btn_credit_checkbox"
+                android:text="Moreinfo" />
+
+            <Button
+                android:id="@+id/btn_credit_make_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_credit_checkbox"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_shape"
+                android:text="Make Payment"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_credit_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn_credit_make_payment"
+                android:layout_below="@+id/rl_credit_outside_details"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/btn_credit_make_payment"
+                android:text="INR 1.00"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            
+                       
+        </RelativeLayout>
+         <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/vbv" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/msc" />
+
+            </LinearLayout>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

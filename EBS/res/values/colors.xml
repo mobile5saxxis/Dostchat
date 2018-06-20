@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <color name="a_color">#33b5e5</color>
+    <color name="genre">#666666</color>
+    <color name="year">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+    <color name="blue">#015289</color>
+    <color name="btn_blue">#000000</color>
+    <color name="sky_blue">#DDE8F3</color>
+    <color name="white">#ffffff</color>
+    <color name="table_bg">#DDE8F3</color>   
+    <color name="btn_shape_bg">#2E64FE</color> 
+    <color name="edittext_bg">#DFDFDF</color>
+    <color name="header_start_bg">#4587d1</color>
+    <color name="header_end_bg">#84bade</color>
+    <color name="blue_bg">#007CC1</color>
+    <color name="grey_bg">#cccccc</color>
+    <color name="edittext_grey">#c8c8c8</color>         
+</resources>

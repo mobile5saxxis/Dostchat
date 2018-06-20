@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+     <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+	    android:background="@color/btn_blue" >
+
+        <TextView
+            android:id="@+id/tv_listheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowDx="0"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:text="Select your bank"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+     <ListView
+         android:id="@+id/lv_list"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="@android:color/transparent"
+         android:cacheColorHint="@android:color/transparent"
+         android:listSelector="@android:color/transparent" >
+     </ListView>
+
+</LinearLayout>

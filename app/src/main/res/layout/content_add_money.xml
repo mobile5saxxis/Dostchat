@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.dostchat.dost.activities.recharge.AddMoneyActivity"
+    tools:showIn="@layout/activity_add_money">
+
+    <TextView
+        android:id="@+id/tv_wallet_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_rectangle"
+        android:padding="16dp"
+        android:text="Wallet Balance  \u20B9 0 "
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/add_money_et_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Amount (\u20B9)"
+        android:inputType="number"
+        android:padding="15dp"
+        android:textColor="@color/colorBlack" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/txt_1000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/add_money_bg"
+            android:gravity="center"
+            android:maxWidth="70dp"
+            android:padding="10dp"
+            android:text="1000"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/txt_500"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/add_money_bg"
+            android:gravity="center"
+            android:maxWidth="70dp"
+            android:padding="10dp"
+            android:text="500"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/txt_100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/add_money_bg"
+            android:gravity="center"
+            android:maxWidth="70dp"
+            android:padding="10dp"
+            android:text="100"
+            android:textColor="@color/colorBlack" />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/add_money_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_rectangle"
+        android:text="Add Money"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

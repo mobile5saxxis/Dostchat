@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2a95e7</color><!--2a95e6   ecb22b-->
+    <color name="colorPrimaryDark">#1F82E0</color>
+    <color name="colorAccent">#2a95e7</color>
+    <color name="colorAccentSecondary">#5f00897B</color>
+    <color name="colorPrimaryLight">#3000897B</color>
+    <color name="colorPrimaryLightSelect">#E6E6E6</color>
+    <color name="colorPrimaryLightRipple">#5f00897B</color>
+    <color name="colorPrimaryLightRipple_">#1e5baff4</color>
+    <color name="colorBlueLight">#03A9F4</color>
+    <color name="colorBlueLightSearch">#03A9F4</color>
+    <color name="colorBlueLighter">#907acef4</color>
+    <color name="colorBlueGroup">#007ee5</color>
+    <color name="colorHolderDrawable">#0c7465</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="colorSlideIndicator">#009ea5</color>
+    <color name="colorSlideIndicatorLight">#8f009ea5</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#B6B6B6</color>
+    <color name="colorOrangeDark">#FF5722</color>
+    <color name="colorRedDark">#E00034</color>
+    <color name="colorOrangeLight">#FF5252</color>
+    <color name="colorOrange">#FF9800</color>
+    <color name="colorBlack">#ff000000</color>
+    <color name="colorBlackLight">#2f000000</color>
+    <color name="colorBlackLightCustomToast">#7f000000</color>
+    <color name="colorBlackOpc">#10000000</color>
+    <color name="colorPinkDark">#E91E63</color>
+    <color name="colorPinkLight">#F06898</color>
+    <color name="colorPinkVeryLight">#FCDCE8</color>
+    <color name="colorSea">#009ea5</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteLight">#21ffffff</color>
+    <color name="colorWhiteLighter">#99ffffff</color>
+    <color name="colorGreenVeryDark">#00C853</color>
+    <color name="colorGreenLight">#0EC654</color>
+    <color name="colorGreenDark">#00E676</color>
+    <color name="colorBanana">#f4f4dd</color>
+    <color name="colorGray">#E6E6E6</color>
+    <color name="colorGray3">#B6B6B6</color>
+    <color name="colorGray4">#DADADA</color>
+    <color name="colorGrayLighter">#EAEAEA</color>
+    <color name="colorUnSelected">#E6E6E6</color>
+    <color name="colorUnSelectedMedia">#636363</color>
+
+    <!-- Attachements -->
+
+    <color name="colorAttachVideo">#D33632</color>
+    <color name="colorAttachGalleryStart">#B03CC4</color>
+    <color name="colorAttachGalleryEnd">#871E92</color>
+
+    <color name="colorAttachDocStart">#40409E</color>
+    <color name="colorAttachDocEnd">#4C4EC1</color>
+
+    <color name="colorAttachAudioStart">#137ECF</color>
+    <color name="colorAttachAudioEnd">#1591E5</color>
+    <!--holders -->
+    <color name="colorBgHolderGray">#DBE2E5</color>
+    <color name="colorBgHolderGroupGreen">#75C78A</color>
+    <color name="colorBgHolderUserGreen">#63B4AA</color>
+    <!--holders colors-->
+    <color name="colorOtherBubble">#C0E8FE</color>
+    <color name="colorRightBubble">#b0ddf7</color>
+    <color name="colorLeftBubble">#ffffff</color>
+    <color name="colorMessageBackground">#ece5dd</color>
+    <color name="colorGray2">#888888</color>
+    <color name="colorGrayStatus">#34465d</color>
+    <color name="colorGrayTransparent">#20000000</color>
+    <color name="colorGrayDark">#636363</color>
+    <color name="colorGrayDarker">#607D8B</color>
+    <color name="colorGrayDarkerBar">#455A64</color>
+    <color name="colorGrayLight">#EAEAEA</color>
+    <color name="colorHanBlue">#446CCF</color>
+    <color name="colorJelly">#DA614E</color>
+    <color name="colorLightSeaGreen">#20B2AA</color>
+    <color name="colorMetallic">#0A7E8C</color>
+    <color name="colorBeauBlue">#8fBCD4E6</color>
+    <color name="colorCeladionGreen">#ACE1AF</color>
+    <color name="colorPearl">#88D8C0</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorYellow">#EEFF41</color>
+    <color name="colorCyan">#00FFFF</color>
+    <color name="colorGreenFlow">#80cbc4</color>
+    <color name="colorGreenDeep">#009688</color>
+    <color name="colorGreenProgressBars">#25d366</color>
+    <color name="colorGreenLighter">#6f0EC654</color>
+    <color name="silver">#ecf0f1</color>
+</resources>

@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dostchat.dost">
+
+    <!-- permissions for Network -->
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- permissions for SMS -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- permissions for contacts -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- Authenticator -->
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <!-- Storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- Audio -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- WebRTC Dependencies -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="false"
+        android:smallScreens="true" />
+
+    <application
+        android:name=".app.DostChatApp"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4b9d32340086a310ee0fb46b664adfdfecc41911" />
+
+        <activity
+            android:name=".activities.main.SplashScreenActivity"
+            android:configChanges="locale"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- WelcomeActivity -->
+        <activity
+            android:name=".activities.main.WelcomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".activities.main.MainActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <data android:scheme="http" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- PreMainActivity -->
+        <activity
+            android:name=".activities.main.PreMainActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+
+        <!-- MessagesActivity -->
+        <activity
+            android:name=".activities.messages.MessagesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+
+        <!-- MessagesPopupActivity -->
+        <activity
+            android:name=".activities.popups.MessagesPopupActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@style/Dialog"
+            android:windowActionBar="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:configChanges="locale"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+
+        <!-- UCropActivity -->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:configChanges="locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- TempActivity -->
+        <activity
+            android:name=".activities.images.TempActivity"
+            android:configChanges="locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <!-- BackupActivity -->
+        <activity
+            android:name=".activities.settings.BackupActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="start_bakcup_activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- MediaActivity -->
+        <activity
+            android:name=".activities.media.MediaActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+
+        <!-- CreateGroupActivity -->
+        <activity
+            android:name=".activities.groups.CreateGroupActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- AddMembersToGroupActivity -->
+        <activity
+            android:name=".activities.groups.AddMembersToGroupActivity"
+            android:configChanges="locale" />
+
+        <!-- AddNewMembersToGroupActivity -->
+        <activity
+            android:name=".activities.groups.AddNewMembersToGroupActivity"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <!-- TransferMessageContactsActivity -->
+        <activity
+            android:name=".activities.messages.TransferMessageContactsActivity"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+
+        <!-- PrivacyActivity -->
+        <activity
+            android:name=".activities.PrivacyActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <!-- PreferenceLanguageActivity -->
+        <activity
+            android:name=".activities.settings.PreferenceLanguageActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <!-- ChatsSettingsActivity -->
+        <activity
+            android:name=".activities.settings.ChatsSettingsActivity"
+            android:configChanges="locale" />
+        <!-- NotificationsSettingsActivity -->
+        <activity
+            android:name=".activities.settings.NotificationsSettingsActivity"
+            android:configChanges="locale" />
+        <!-- AccountSettingsActivity -->
+        <activity
+            android:name=".activities.settings.AccountSettingsActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_account_settings" />
+
+        <!-- ImagePreviewActivity -->
+        <activity
+            android:name=".activities.media.ImagePreviewActivity"
+            android:configChanges="locale"
+            android:windowActionBar="false" />
+
+        <!-- VideoPlayerActivity -->
+        <activity
+            android:name=".activities.media.VideoPlayerActivity"
+            android:configChanges="locale"
+            android:windowActionBar="false" />
+        <!-- DeleteAccountActivity -->
+        <activity
+            android:name=".activities.settings.DeleteAccountActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/title_activity_delete_account"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- BlockedContactsActivity -->
+        <activity
+            android:name=".activities.BlockedContactsActivity"
+            android:label="@string/title_blocked_contacts"
+            android:theme="@style/AppTheme" />
+
+        <!-- ChangeNumberActivity -->
+        <activity
+            android:name=".activities.settings.ChangeNumberActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_change_number"
+            android:theme="@style/AppTheme" />
+
+        <!-- AboutActivity -->
+        <activity
+            android:name=".activities.settings.AboutActivity"
+            android:configChanges="locale"
+            android:theme="@style/AppTheme" />
+        <!-- AboutHelpActivity -->
+        <activity
+            android:name=".activities.settings.AboutHelpActivity"
+            android:configChanges="locale"
+            android:theme="@style/AppTheme" />
+
+        <!-- OutDateActivity -->
+        <!-- ProfilePreviewActivity -->
+        <activity
+            android:name=".activities.profile.ProfilePreviewActivity"
+            android:configChanges="locale"
+            android:theme="@style/Dialog"
+            android:windowActionBar="false" />
+        <activity android:name=".activities.profile.ProfileActivity" />
+
+        <!-- SettingsActivity -->
+        <activity
+            android:name=".activities.settings.SettingsActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+
+        <!-- SearchConversationsActivity -->
+        <activity
+            android:name=".activities.search.SearchConversationsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- CountryActivity -->
+        <activity
+            android:name=".activities.CountryActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_settings" />
+        <!-- CallDetailsActivity -->
+        <activity
+            android:name=".activities.call.CallDetailsActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+        <!-- CallAlertActivity -->
+        <activity
+            android:name=".activities.call.CallAlertActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+
+        <!-- SearchContactsActivity -->
+        <activity
+            android:name=".activities.search.SearchContactsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- SearchCallsActivity -->
+        <activity
+            android:name=".activities.search.SearchCallsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- EditProfileActivity -->
+        <activity
+            android:name=".activities.profile.EditProfileActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_edit_profile"
+            android:theme="@style/AppTheme" />
+
+        <!-- StatusActivity -->
+        <activity
+            android:name=".activities.status.StatusActivity"
+            android:configChanges="locale"
+            android:label="@string/title_activity_status"
+            android:theme="@style/AppTheme" />
+        <!-- StatusDelete -->
+        <activity
+            android:name=".activities.popups.StatusDelete"
+            android:configChanges="locale"
+            android:theme="@style/Dialog"
+            android:windowActionBar="false" />
+        <!-- EditStatusActivity -->
+        <activity
+            android:name=".activities.status.EditStatusActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/title_activity_edit_status"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- EditUsernameActivity -->
+        <activity
+            android:name=".activities.profile.EditUsernameActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/title_activity_edit_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- EditGroupActivity -->
+        <activity
+            android:name=".activities.groups.EditGroupActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:label="@string/title_activity_edit_group_name"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- NewConversationContactsActivity -->
+        <activity
+            android:name=".activities.NewConversationContactsActivity"
+            android:configChanges="locale"
+            android:label="@string/title_select_contacts"
+            android:theme="@style/AppTheme" />
+        <!-- CrashActivity -->
+        <activity
+            android:name=".activities.CrashActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="catch_error_activity_whatsClone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- WallpaperSelector -->
+        <activity
+            android:name=".activities.popups.WallpaperSelector"
+            android:configChanges="locale"
+            android:theme="@style/Dialog"
+            android:windowActionBar="false" />
+        <!-- calls -->
+
+        <activity
+            android:name=".activities.call.CallActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.call.IncomingCallActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name" />
+
+        <receiver
+            android:name=".receivers.BootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <!-- Restart service when the user kill processor -->
+
+        <service
+            android:name=".services.BootService"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_service_name"
+            android:process=":remote" />
+
+        <receiver
+            android:name=".receivers.NetworkChangeListener"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- the main service -->
+        <service
+            android:name=".services.MainService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_service_name">
+            <intent-filter>
+                <action android:name="new_user_message_notification_whatsclone" />
+                <action android:name="new_group_message_notification_whatsclone" />
+                <action android:name="new_user_joined_notification_whatsclone" />
+            </intent-filter>
+        </service>
+
+        <!-- AuthenticationService -->
+        <service
+            android:name=".sync.AuthenticatorService"
+            android:exported="true"
+            android:process=":auth">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <!-- SyncService for SyncAdapter -->
+        <service
+            android:name=".sync.SyncService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_adapter" />
+        </service>
+
+        <!-- SMS Receiver -->
+        <receiver android:name=".receivers.SmsReceiverBroadCast">
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent service for verification Code -->
+        <service
+            android:name=".services.SMSVerificationService"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.recharge.MobileRechargeActivity"
+            android:label="@string/title_activity_mobile_recharge"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.recharge.DTHActivity"
+            android:label="@string/title_activity_dth"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.recharge.DCActivity"
+            android:label="@string/title_activity_dc"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.recharge.BrowsePlansActivity"
+            android:label="@string/title_activity_browse_plans"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.recharge.CompletePaymentActivity"
+            android:label="@string/title_activity_complete_payment"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.recharge.AddMoneyActivity"
+            android:label="@string/title_activity_add_money"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.recharge.CompleteInfoActivity" />
+        <!-- <activity android:name=".activities.sinch.IncomingCallScreenActivity" /> -->
+        <activity
+            android:name=".video.LiveRoomActivity"
+            android:label="@string/title_activity_live_room"
+            android:parentActivityName=".activities.messages.MessagesActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.messages.MessagesActivity" />
+        </activity>
+        <activity
+            android:name=".activities.recharge.WalletActivity"
+            android:label="@string/dostchat"
+            android:parentActivityName=".activities.main.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dostchat.dost.activities.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.main.SOSActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.settings.FAQActivity" />
+        <activity android:name=".activities.settings.AnswerActivity"></activity>
+    </application>
+
+</manifest>

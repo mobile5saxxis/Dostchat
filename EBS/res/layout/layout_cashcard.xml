@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_bg">
+    
+    <RelativeLayout 
+        android:id="@+id/rl_inner_cashcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_dropshadow"
+        android:layout_margin="15dp"
+        android:paddingTop="10dp" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/tv_cashcard_selectcard_placeholder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="Select Cash Card Type"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_ed_cashcard"
+        android:layout_below="@+id/tv_cashcard_selectcard_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/edit_text_block_background"
+        
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        
+        
+        <!-- Thumbnail Image -->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/Imv_cashcard_selected_thumbnail"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="1dp" />
+
+    <EditText
+        android:id="@+id/ed_cashcard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/Imv_cashcard_selected_thumbnail"
+        android:background="@drawable/edit_text_block_background"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:drawableRight="@drawable/dropbtn"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Select Cash Card"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/edittext_grey"
+        android:textSize="16sp" />
+    
+    
+    
+    </RelativeLayout>
+    <Button
+            android:id="@+id/btn_cashcard_submit"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:padding="10dp"
+            android:layout_below="@+id/rl_ed_cashcard"
+            android:layout_centerHorizontal="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/btn_blue"
+            android:text="Make Payment"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white" />
+</RelativeLayout>
+</RelativeLayout>

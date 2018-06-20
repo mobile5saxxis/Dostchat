@@ -1,0 +1,190 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1f000000"
+        android:gravity="center"
+        android:orientation="vertical" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Fetching caller's location..."
+        android:textSize="15dp"
+        android:textColor="#fff"
+        android:paddingLeft="30dp"
+        android:paddingTop="3dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="3dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:visibility="visible"
+        android:id="@+id/location"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:paddingTop="66dp"
+        android:visibility="visible">
+
+
+        <TextView
+            android:id="@+id/incoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="@string/incoming_call"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/incoming_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/incoming"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/fake_name"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/caller_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/incoming_type"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/fake_name"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/caller_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/caller_name"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|center"
+            android:text="@string/fake_name"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/caller_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/caller_phone"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:scaleType="centerCrop" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/caller_phone"
+            android:clickable="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/call_actions"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:baselineAligned="false"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:id="@+id/accept_call_layout"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:layout_marginLeft="36dp"
+                    android:background="@drawable/bg_accept_call"
+                    android:clickable="true"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/accept_call"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_item_round_ripple"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_call_white_24dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" />
+
+                <FrameLayout
+                    android:id="@+id/reject_call_layout"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:layout_marginRight="36dp"
+                    android:background="@drawable/bg_cancel_call"
+
+                    android:clickable="true"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/reject_call"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_item_round_ripple"
+                        android:padding="16dp"
+                        app:srcCompat="@drawable/ic_call_end_white_24dp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@string/click_to_make_an_action"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

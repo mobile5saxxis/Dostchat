@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EBS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_payment_detail">PaymentDetailActivity</string>
+    <string name="title_activity_payment">PaymentActivity</string>
+    <string name="title_activity_webview">Webview</string>
+    <string name="btn_send">Send</string>
+
+    <!-- String values for text view -->
+    <string name="trans_title">Transaction Details</string>
+    <string name="trans_saleamt">* Sale Amount</string>
+    <string name="trans_description">*Description</string>
+
+    <!-- String values for textview billing address -->
+
+    <string name="billing_title">Billing Address</string>
+    <string name="bill_name">*Name</string>
+    <string name="bill_address">*Address</string>
+    <string name="bill_city">*City</string>
+    <string name="bill_state">State/Province</string>
+    <string name="bill_zip">*ZIP/Postal Code</string>
+    <string name="bill_country">*Country</string>
+    <string name="bill_email">*Email</string>
+    <string name="bill_phone">Telephone</string>
+
+    <!-- String value for delivery address -->
+
+    <string name="deliveryaddress_title">Delivery Address</string>
+    <string name="del_name">Name</string>
+    <string name="del_address">Address</string>
+    <string name="del_city">City</string>
+    <string name="del_state">State/Province</string>
+    <string name="del_zip">ZIP/Postal Code</string>
+    <string name="del_country">Country</string>
+    <string name="del_phone">Telephone</string>
+
+    <!-- String Value for button name -->
+
+    <string name="btn_submit">Submit</string>
+    <string name="btn_reset">Reset</string>
+	<string name="chk_save_card">Save this Card</string>
+    
+    
+    <!-- String Value for note textview -->
+    <string name="tv_note">* denotes required field</string>
+    <string name="title_activity_test__transaction_details">Test_TransactionDetailsActivity</string>
+    <string name="title_activity_payment_success">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_payment_failure">PaymentFailureActivity</string>
+
+
+
+    <!--String value for payment Failure-->
+    <string name="payment_failure">Thanks for your shopping!</string>
+    <string name="title_activity_idle_time_out">IdleTimeOut</string>
+    
+    <string name ="title_surcharge">Surcharge Amount</string>
+</resources>

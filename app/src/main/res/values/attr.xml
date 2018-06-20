@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout_Layout">
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+
+    <declare-styleable name="FontsView">
+
+        <attr name="fontValue" format="string" />
+
+    </declare-styleable>
+
+    <declare-styleable name="FlexLayout">
+        <attr name="viewPartMain" format="reference" />
+        <attr name="viewPartSlave" format="reference" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,566 @@
+[
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_list_longpressed_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_on_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_on_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_payment.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_payment.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_header_background.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\header_background.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_vbv.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\vbv.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_spinner_default_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\spinner_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_spinner_focused_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\spinner_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_on_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_on_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_on_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_on_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_list_focused_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_spinner_focused_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\spinner_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_on_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_on_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_off_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_list_longpressed_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_menu_idle_time_out.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\menu\\menu_idle_time_out.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_img_cvv.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\img_cvv.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_btn_close.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_close.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_ic_save_check.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_save_check.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_btn_dropdown_normal.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_dropdown_normal.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_on_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_on_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_off_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_off_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_img_cvv.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_img_cvv.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_spinner_default_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\spinner_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_off_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_off_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_debitcard.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_debitcard.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_save_check.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_save_check.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_list_activated_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\list_activated_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_off_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_off_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_spinner_default_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\spinner_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_list_popup.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\list_popup.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_list_selector_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_list_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_on_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_on_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_spinner_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\spinner_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_spinner_background_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\spinner_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_on_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_on_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_on_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_on_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_header_logo.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\header_logo.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_edit_text_block_background.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\edit_text_block_background.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_spinner_focused_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\spinner_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_ic_save_uncheck.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_save_uncheck.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_msc.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\msc.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_on_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_on_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_btn_radio_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_radio_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_on_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_on_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_dropbtn.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\dropbtn.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_inflate_discurency.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\inflate_discurency.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_on_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_on_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_off_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_off_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_ic_save_check.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_save_check.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_img_cvv_old.jpg.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\img_cvv_old.jpg"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_item_major.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\item_major.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_list_longpressed_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_off_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_spinner_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\spinner_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_creditcard.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_creditcard.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_customradio_selector.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\customradio_selector.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_list_selector_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_spinner_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\spinner_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_list_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_on_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_on_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_tes_transaction_details.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\tes_transaction_details.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_off_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_off_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_spinner_focused_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\spinner_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_adapter_item_major_bank.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\adapter_item_major_bank.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_list_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_list_focused_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_on_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_on_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_header_logo.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\header_logo.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_on_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_on_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_list_row.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\list_row.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_list_row_bg_hover.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_row_bg_hover.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_bg_design.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\bg_design.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_off_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_off_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_header_logo.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\header_logo.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_on_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_on_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_container_dropshadow.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\container_dropshadow.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_netbanking.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_netbanking.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_off_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_off_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_off_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_off_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_list_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_off_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_ic_save_uncheck.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_save_uncheck.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_inflater_amount.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\inflater_amount.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_list_group.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\list_group.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_list_longpressed_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_adapter_customalert.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\adapter_customalert.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_on_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_on_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_list_selector_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_list_activated_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\list_activated_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_payment_success.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\menu\\payment_success.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_cashcard.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_cashcard.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_layout_storedcard.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\layout_storedcard.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_save_uncheck.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_save_uncheck.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_on_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_on_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_spinner_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\spinner_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_header_logo.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\header_logo.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_list_storedcard_popup.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\list_storedcard_popup.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_on_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_on_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_off_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_off_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_payment_detail2.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\payment_detail2.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_off_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_off_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_off_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_off_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_img_cvv_oldgif.gif.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\img_cvv_oldgif.gif"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_spinner_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\spinner_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_payment_details.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_payment_details.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_button_shape.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\button_shape.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_list_activated_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\list_activated_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_spinner_default_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\spinner_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_off_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_off_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_list_selector_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_list_focused_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_idle_time_out.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_idle_time_out.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_spinner_selector.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\spinner_selector.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_list_row_bg.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_row_bg.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_btn_radio_off_disabled_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\btn_radio_off_disabled_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_checkbox_selector.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\checkbox_selector.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_list_selector_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_adapter_major_banks.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\adapter_major_banks.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_list_selector_background_transition_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_off_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_btn_radio_on_pressed_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_radio_on_pressed_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_on_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_on_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_save_uncheck.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_save_uncheck.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_list_activated_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\list_activated_holo.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_spinner_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\spinner_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_spinner_disabled_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\spinner_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_item_background_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_list_storedcard.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\list_storedcard.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_ic_launcher.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_activated_background_holo_light.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\activated_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_off_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_off_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_btn_radio_off_disabled_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_radio_off_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_arrow.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\arrow.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_save_check.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_save_check.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_payment_failure.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\menu\\payment_failure.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_list_row_selector.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_row_selector.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_btn_radio_off_focused_holo_light.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\btn_radio_off_focused_holo_light.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_spinner_pressed_holo_light.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\spinner_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_payment_failure.xml.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_payment_failure.xml"
+    },
+    {
+        "merged": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_list_focused_holo.9.png.flat",
+        "source": "E:\\Android projects\\newDostchat180618\\Dostchat180618\\EBS\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\list_focused_holo.9.png"
+    }
+]

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20dp"
+    
+   >
+
+    <LinearLayout
+        android:id="@+id/ll_col1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb1_row1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/Imv_netbanking_selected_thumbnail1"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+           
+            />
+    </LinearLayout>
+
+</LinearLayout>

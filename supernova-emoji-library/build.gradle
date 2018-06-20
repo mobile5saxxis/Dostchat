@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    def supportLibsVer = "25.2.0"
+    compile "com.android.support:support-v4:$supportLibsVer"
+
+}
+
+
