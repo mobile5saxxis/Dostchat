@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.dostchat.dost.activities.main.MainActivity">
 
     <View
         android:layout_width="match_parent"
@@ -37,8 +38,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/bg_alert_call"
                     android:gravity="center"
-                    android:text="@string/icon_no_conversations"
                     android:padding="26dp"
+                    android:text="@string/icon_no_conversations"
                     android:textColor="@color/colorWhite"
                     android:textSize="50sp" />
 
@@ -53,21 +54,44 @@
                     android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeConversations"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/ConversationsList"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeConversations"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ConversationsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none|vertical"
+                android:visibility="visible"
+                tools:listitem="@layout/row_conversation" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="72dp"
             android:visibility="visible"
-            tools:listitem="@layout/row_conversation" />
-    </android.support.v4.widget.SwipeRefreshLayout>
+            app:elevation="@dimen/activity_horizontal_margin"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_chat_bubble_white_24dp" />
+
+    </RelativeLayout>
 
 </FrameLayout>

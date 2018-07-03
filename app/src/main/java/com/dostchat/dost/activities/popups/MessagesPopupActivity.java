@@ -128,6 +128,8 @@ public class MessagesPopupActivity extends AppCompatActivity implements LoadingD
     ImageButton SendRecordButton;
     @BindView(R.id.pictureBtn)
     ImageButton PictureButton;
+    @BindView(R.id.attach_file)
+    ImageButton attachfile;
 
 
     @BindView(R.id.emoticonBtn)

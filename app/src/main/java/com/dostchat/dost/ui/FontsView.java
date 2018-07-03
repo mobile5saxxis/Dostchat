@@ -34,7 +34,7 @@ public class FontsView extends TextView {
             String font = tA.getString(R.styleable.FontsView_fontValue);
 
             if (font == null) {
-                font = "Linearicons_free.ttf.ttf";
+                font = "Linearicons_free.ttf";
             }
 
             String fontPath = String.format("fonts/%s", font);

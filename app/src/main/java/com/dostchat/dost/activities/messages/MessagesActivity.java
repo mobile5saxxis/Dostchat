@@ -160,6 +160,9 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
     ImageButton SendRecordButton;
     @BindView(R.id.pictureBtn)
     ImageButton PictureButton;
+    @BindView(R.id.attach_file)
+    ImageButton attach_file;
+
 
     @BindView(R.id.emoticonBtn)
     ImageView EmoticonButton;

@@ -37,13 +37,13 @@ public class HomeTabsAdapter extends FragmentPagerAdapter {
                     fragment = new CameraFragment();
                     break;
                 case 1:
-                    fragment = new CallsFragment();
-                    break;
-                case 2:
                     fragment = new ConversationsFragment();
                     break;
-                case 3:
+                case 2:
                     fragment = new ContactsFragment();
+                    break;
+                case 3:
+                    fragment = new CallsFragment();
                     break;
             }
 
@@ -62,12 +62,13 @@ public class HomeTabsAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "Calls";
-            case 1:
                 return "Discussion";
-            case 2:
+            case 1:
             default:
                 return "Contacts";
+            case 2:
+                return "Calls";
+
         }
     }
 

@@ -53,6 +53,9 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeCalls"
@@ -67,6 +70,26 @@
             android:scrollbars="vertical"
             android:visibility="visible"
             tools:listitem="@layout/row_calls" />
+
     </android.support.v4.widget.SwipeRefreshLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="72dp"
+            android:visibility="visible"
+            app:elevation="@dimen/activity_horizontal_margin"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_call_white_24dp" />
+
+    </RelativeLayout>
+
+
+
 
 </FrameLayout>

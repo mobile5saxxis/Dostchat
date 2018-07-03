@@ -327,6 +327,14 @@
                                 android:textColorHint="@color/colorGray"
                                 android:textSize="16sp"
                                 emojicon:emojiconSize="30sp" />
+                            <ImageButton
+                                android:id="@+id/attach_file"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@color/colorWhite"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_attachment" />
 
                             <ImageButton
                                 android:id="@+id/pictureBtn"

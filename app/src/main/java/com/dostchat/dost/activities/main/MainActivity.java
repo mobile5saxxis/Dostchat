@@ -47,6 +47,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.dostchat.dost.activities.messages.MessagesActivity;
+import com.dostchat.dost.fragments.home.ContactsFragment;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -116,6 +118,7 @@ import static com.dostchat.dost.app.AppConstants.EVENT_BUS_STOP_REFRESH;
  */
 public class MainActivity extends AppCompatActivity implements NetworkListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     @BindView(R.id.app_bar_main)
@@ -146,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
     private HomeTabsAdapter homeTabsAdapter;
     int REQUEST_CHECK_SETTINGS_GPS = 1;
 
+
     // Sync interval constants
     public static final long SECONDS_PER_MINUTE = 60L;
     public static final long SYNC_INTERVAL_IN_MINUTES = 60L;//
@@ -160,6 +164,10 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
 
         DostChatApp.getInstance().startTrackingLocation(this);
 
@@ -196,15 +204,7 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
-        if (timeOfDay >= 0 && timeOfDay < 12) {
-            return "Good Morning";
-        } else if (timeOfDay >= 12 && timeOfDay < 16) {
-            return "Good Afternoon";
-        } else if (timeOfDay >= 16 && timeOfDay < 21) {
-            return "Good Evening";
-        } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            return "Good Night";
-        }
+
         return "";
     }
 
@@ -251,8 +251,8 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
 
     private void setTypeFaces() {
         if (AppConstants.ENABLE_FONTS_TYPES) {
-            ((TextView) findViewById(R.id.title_tabs_contacts)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
             ((TextView) findViewById(R.id.title_tabs_messages)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
+            ((TextView) findViewById(R.id.title_tabs_contacts)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
             ((TextView) findViewById(R.id.title_tabs_calls)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
         }
     }
@@ -448,14 +448,16 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
                 getMenuInflater().inflate(R.menu.menu_camera, menu);
                 break;
             case 1:
-                getMenuInflater().inflate(R.menu.calls_menu, menu);
-                break;
-            case 2:
                 getMenuInflater().inflate(R.menu.conversations_menu, menu);
                 break;
-            case 3:
+            case 2:
                 getMenuInflater().inflate(R.menu.contacts_menu, menu);
                 break;
+            case 3:
+                getMenuInflater().inflate(R.menu.calls_menu, menu);
+                break;
+
+
 
         }
         return super.onCreateOptionsMenu(menu);
@@ -492,9 +494,9 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         viewPager.setCurrentItem(2);
         tabLayout.getTabAt(0).setCustomView(R.layout.custom_tab_camera);
-        tabLayout.getTabAt(1).setCustomView(R.layout.custom_tab_calls);
-        tabLayout.getTabAt(2).setCustomView(R.layout.custom_tab_messages);
-        tabLayout.getTabAt(3).setCustomView(R.layout.custom_tab_contacts);
+        tabLayout.getTabAt(1).setCustomView(R.layout.custom_tab_messages);
+        tabLayout.getTabAt(2).setCustomView(R.layout.custom_tab_contacts);
+        tabLayout.getTabAt(3).setCustomView(R.layout.custom_tab_calls);
         ((TextView) findViewById(R.id.title_tabs_contacts)).setTextColor(AppHelper.getColor(this, R.color.colorUnSelected));
         ((TextView) findViewById(R.id.title_tabs_calls)).setTextColor(AppHelper.getColor(this, R.color.colorUnSelected));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -507,21 +509,21 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
                         viewPager.setCurrentItem(0);
                         findViewById(R.id.counterTabMessages).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
                         findViewById(R.id.counterTabCalls).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter));
-                        ((TextView) findViewById(R.id.title_tabs_calls)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
+                        ((TextView) findViewById(R.id.title_tabs_messages)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
                         break;
                     case 1:
                         icon = AppHelper.getVectorDrawable(MainActivity.this, R.drawable.ic_chat_white_24dp);
                         viewPager.setCurrentItem(1);
                         findViewById(R.id.counterTabMessages).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter));
                         findViewById(R.id.counterTabCalls).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
-                        ((TextView) findViewById(R.id.title_tabs_messages)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
+                        ((TextView) findViewById(R.id.title_tabs_contacts)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
                         break;
                     case 2:
                         icon = AppHelper.getVectorDrawable(MainActivity.this, R.drawable.ic_person_add_24dp);
                         viewPager.setCurrentItem(2);
                         findViewById(R.id.counterTabMessages).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
                         findViewById(R.id.counterTabCalls).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
-                        ((TextView) findViewById(R.id.title_tabs_contacts)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
+                        ((TextView) findViewById(R.id.title_tabs_calls)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
                         break;
                     default:
                         break;
@@ -624,7 +626,7 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
                 header_title.setText("Welcome " + contactsModel.getUsername());
             }
 
-            DostChatApp.speek(header_title.getText() + " " + getTimePeriod());
+
         }
 
         navigationView.setNavigationItemSelectedListener(this);
