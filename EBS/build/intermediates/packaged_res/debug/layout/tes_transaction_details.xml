@@ -1,0 +1,40 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/sky_blue" >
+
+    <LinearLayout
+       
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sky_blue"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ll_padding" >
+        
+        
+         <LinearLayout
+        android:id="@+id/tbl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sky_blue"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ll_padding" >
+
+       
+        
+         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_Send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/btn_margin"
+            android:background="@color/btn_blue"
+            android:padding="@dimen/btn_padding"
+            android:gravity="center_horizontal|center_horizontal"
+            android:text="@string/btn_send"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</ScrollView>

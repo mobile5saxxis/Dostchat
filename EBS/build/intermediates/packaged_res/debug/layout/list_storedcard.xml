@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_storedcard_lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_inner_cashcard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/container_dropshadow"
+        android:orientation="horizontal"
+        android:padding="10dp"
+         >
+        
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/Imv_storedcard_selected_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:layout_margin="4dp"
+             />
+
+        <LinearLayout
+            android:id="@+id/storedcard_details_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Imv_storedcard_selected_thumbnail"
+            android:layout_toEndOf="@+id/Imv_storedcard_selected_thumbnail"
+            android:layout_toLeftOf="@+id/tv_storedcard_amount_placeholder"
+            android:layout_toStartOf="@+id/tv_storedcard_amount_placeholder"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_storedcard_brand_placeholder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Card Brand" />
+
+            <TextView
+                android:id="@+id/tv_storedcard_name_placeholder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storedcard_brand_placeholder"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:text="Card Name" />
+
+            <TextView
+                android:id="@+id/tv_storedcard_number_placeholder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storedcard_name_placeholder"
+                android:text="Card Number" />
+            
+            <TextView
+                android:id="@+id/tv_storedcard_id_placeholder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                 />
+            <TextView
+                android:id="@+id/tv_storedcard_cvv_placeholder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                 />
+        </LinearLayout>
+
+        
+    </RelativeLayout>
+
+</LinearLayout>
