@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -344,7 +345,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
                 AppHelper.LogCat(e);
             }
 
-        }else {
+        } else {
             location.setVisibility(View.VISIBLE);
             //DostChatApp.locationUpdateManager.locationExchange(senderId,recipientId,location);
             DostChatApp.locationUpdateManager.locationExchange(location);
@@ -513,7 +514,6 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
     }
 
 /*
@@ -525,6 +525,41 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
     }
 */
 
+    @OnClick(R.id.attachBtn)
+    public void showToogle() {
+        final View view = findViewById(R.id.items_container);
+        final View startView = findViewById(R.id.attachBtn);
+        int cx = (startView.getLeft() + startView.getRight()) / 2;
+        int cy = (startView.getTop() + startView.getBottom()) / 2;
+
+        int finalRadius = Math.max(view.getHeight() - cx, cx);
+
+        Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
+        anim.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        anim.setDuration(200);
+        view.setVisibility(View.VISIBLE);
+        anim.start();
+    }
 
     /**
      * method to animate the attachment items
@@ -1880,6 +1915,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
         myDialog = builder.create();
         myDialog.show();
     }
+
     private void makeVideoCall() {
 
         AlertDialog myDialog;

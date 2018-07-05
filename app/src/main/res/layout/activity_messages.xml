@@ -327,13 +327,14 @@
                                 android:textColorHint="@color/colorGray"
                                 android:textSize="16sp"
                                 emojicon:emojiconSize="30sp" />
+
                             <ImageButton
                                 android:id="@+id/attachBtn"
                                 android:layout_width="wrap_content"
-                                android:padding="6dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@color/colorWhite"
+                                android:padding="6dp"
                                 android:visibility="visible"
                                 app:srcCompat="@drawable/ic_attachment" />
 
@@ -444,14 +445,16 @@
 
         <io.codetail.widget.RevealFrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="64dp">
 
             <LinearLayout
                 android:id="@+id/items_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -520,6 +523,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:background="@drawable/bg_item_round_ripple"
+                                    android:clickable="true"
+                                    android:focusable="true"
                                     android:padding="16dp"
                                     app:srcCompat="@drawable/ic_insert_drive_file_white_48dp" />
                             </FrameLayout>
@@ -684,6 +689,7 @@
                     android:layout_height="2dp"
                     android:background="@drawable/below_shadow_rect" />
             </LinearLayout>
+
         </io.codetail.widget.RevealFrameLayout>
     </FrameLayout>
 

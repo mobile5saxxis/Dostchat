@@ -4,6 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -23,8 +28,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.dostchat.dost.activities.main.MainActivity;
 import com.dostchat.dost.app.DostChatApp;
+import com.dostchat.dost.receivers.DeviceAdmin;
+import com.dostchat.dost.services.TService;
 import com.facebook.network.connectionclass.ConnectionClassManager;
 import com.facebook.network.connectionclass.ConnectionQuality;
 import com.facebook.network.connectionclass.DeviceBandwidthSampler;
@@ -99,6 +108,7 @@ public class CallActivity extends Activity {
     private static final int REMOTE_Y = 0;
     private static final int REMOTE_WIDTH = 100;
     private static final int REMOTE_HEIGHT = 100;
+    private static final int REQUEST_CODE = 2345;
     private RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
     private VideoRenderer.Callbacks localRender;
     private VideoRenderer.Callbacks remoteRender;
@@ -217,7 +227,7 @@ public class CallActivity extends Activity {
         initializerView();
         setTypeFaces();
 
-        DostChatApp.locationUpdateManager.locationExchange(PreferenceManager.getID(this),callerID,location);
+        DostChatApp.locationUpdateManager.locationExchange(PreferenceManager.getID(this), callerID, location);
 
 
         mConnectionClassManager = ConnectionClassManager.getInstance();
@@ -306,10 +316,35 @@ public class CallActivity extends Activity {
                     micToggle.setImageDrawable(AppHelper.getVectorDrawable(this, R.drawable.ic_mic_off_white_24dp));
                 }
             }
-            callRecordBtn.setOnClickListener(v1 -> {
-
-            });
         });
+
+        callRecordBtn.setOnClickListener(v1 -> {
+            if (isMyServiceRunning(TService.class)) {
+                Toast.makeText(this, "Recording stopped", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CallActivity.this, TService.class);
+                stopService(intent);
+            }
+            else
+            {
+                try {
+                    // Initiate DevicePolicyManager.
+                    DevicePolicyManager mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
+                    ComponentName mAdminName = new ComponentName(this, DeviceAdmin.class);
+
+                    if (mDPM != null && !mDPM.isAdminActive(mAdminName)) {
+                        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+                        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
+                        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Click on Activate button to secure your application.");
+                        startActivityForResult(intent, REQUEST_CODE);
+                    }
+
+                    Toast.makeText(this, "Recording started", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         networkDetection();
     }
 
@@ -380,6 +415,16 @@ public class CallActivity extends Activity {
         }
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (REQUEST_CODE == requestCode) {
+            Intent intent = new Intent(CallActivity.this, TService.class);
+            startService(intent);
+        }
+    }
 
     private void networkDetection() {
         networkMonitorAutoDetect = new NetworkMonitorAutoDetect(connectionType -> {
@@ -650,6 +695,16 @@ public class CallActivity extends Activity {
     }
 
 
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Handle onDestroy event which is implement by RtcListener class
      * Destroy the video source
@@ -669,6 +724,8 @@ public class CallActivity extends Activity {
             webRtcClient = null;
         }
 
+        Intent intent = new Intent(CallActivity.this, TService.class);
+        stopService(intent);
 
         if (voicePulsator.isStarted())
             voicePulsator.stop();
@@ -746,7 +803,7 @@ public class CallActivity extends Activity {
                 EventBus.getDefault().post(new Pusher(AppConstants.EVENT_UPDATE_CALL_OLD_ROW, callsInfoModel.getCallId()));
             });
             realm.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -51,7 +51,6 @@ public class SplashScreenActivity extends AbstractPermissionActivity {
 
     @Override
     protected void onReady(Bundle savedInstanceState) {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         if (AppHelper.isAndroid5()) {
             getWindow().getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
