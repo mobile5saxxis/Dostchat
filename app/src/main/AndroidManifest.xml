@@ -571,7 +571,10 @@
             android:name=".activities.main.SOSActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.settings.FAQActivity" />
-        <activity android:name=".activities.settings.AnswerActivity"></activity>
+        <activity android:name=".activities.settings.AnswerActivity" />
+        <activity
+            android:name=".activities.UserContactActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

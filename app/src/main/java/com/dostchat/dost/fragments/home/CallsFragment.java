@@ -1,5 +1,6 @@
 package com.dostchat.dost.fragments.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.dostchat.dost.R;
+import com.dostchat.dost.activities.UserContactActivity;
 import com.dostchat.dost.adapters.recyclerView.calls.CallsAdapter;
 import com.dostchat.dost.app.AppConstants;
 import com.dostchat.dost.helpers.AppHelper;
@@ -57,6 +59,12 @@ public class CallsFragment extends Fragment implements LoadingData {
         initializerView();
         mCallsPresenter = new CallsPresenter(this);
         mCallsPresenter.onCreate();
+        mView.findViewById(R.id.fab1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), UserContactActivity.class));
+            }
+        });
         return mView;
     }
 

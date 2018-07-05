@@ -170,6 +170,9 @@ public class CallActivity extends Activity {
     @BindView(R.id.hang_up)
     AppCompatImageView hangUpBtn;
 
+    @BindView(R.id.call_record)
+    AppCompatImageView callRecordBtn;
+
     @BindView(R.id.hang_up_layout)
     FrameLayout hangUpLayout;
 
@@ -303,6 +306,9 @@ public class CallActivity extends Activity {
                     micToggle.setImageDrawable(AppHelper.getVectorDrawable(this, R.drawable.ic_mic_off_white_24dp));
                 }
             }
+            callRecordBtn.setOnClickListener(v1 -> {
+
+            });
         });
         networkDetection();
     }

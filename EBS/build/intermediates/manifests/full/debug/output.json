@@ -1,1 +1,1 @@
-[{"outputType":{"type":"MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":2},"path":"AndroidManifest.xml","properties":{"packageId":"com.ebs.android.sdk","split":""}}]
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":2,"versionName":"2.6","enabled":true,"outputFile":"EBS-debug.aar","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"com.ebs.android.sdk","split":""}}]

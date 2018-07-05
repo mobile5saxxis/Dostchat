@@ -1,6 +1,7 @@
 package com.dostchat.dost.fragments.home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.dostchat.dost.R;
+import com.dostchat.dost.activities.UserContactActivity;
 import com.dostchat.dost.adapters.recyclerView.messages.ConversationsAdapter;
 import com.dostchat.dost.app.AppConstants;
 import com.dostchat.dost.app.DostChatApp;
@@ -70,6 +72,7 @@ import static com.dostchat.dost.app.AppConstants.EVENT_UPDATE_CONVERSATION_OLD_R
  */
 public class ConversationsFragment extends Fragment implements LoadingData, RecyclerView.OnItemTouchListener, ActionMode.Callback {
 
+
     @BindView(R.id.ConversationsList)
     RecyclerView ConversationList;
     @BindView(R.id.empty)
@@ -93,6 +96,14 @@ public class ConversationsFragment extends Fragment implements LoadingData, Recy
         initializerView();
         mConversationsPresenter = new ConversationsPresenter(this);
         mConversationsPresenter.onCreate();
+
+        mView.findViewById(R.id.fab1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), UserContactActivity.class));
+            }
+        });
+
         return mView;
     }
 

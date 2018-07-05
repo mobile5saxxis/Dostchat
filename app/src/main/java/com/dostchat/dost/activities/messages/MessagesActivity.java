@@ -160,8 +160,8 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
     ImageButton SendRecordButton;
     @BindView(R.id.pictureBtn)
     ImageButton PictureButton;
-    @BindView(R.id.attach_file)
-    ImageButton attach_file;
+    @BindView(R.id.attachBtn)
+    ImageButton AttachButton;
 
 
     @BindView(R.id.emoticonBtn)
@@ -1867,14 +1867,12 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
     private void makeCall() {
         AlertDialog myDialog;
-        String[] items = {"Voice", "Video"};
+        String[] items = {"Voice"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setItems(items, (dialog, which) -> {
             if (items.length > 0) {
                 if (items[which].equals("Voice")) {
                     CallManager.callContact(MessagesActivity.this, true, false, recipientId);
-                } else if (items[which].equals("Video")) {
-                    CallManager.callContact(MessagesActivity.this, true, true, recipientId);
                 }
             }
         });
@@ -1882,6 +1880,23 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
         myDialog = builder.create();
         myDialog.show();
     }
+    private void makeVideoCall() {
+
+        AlertDialog myDialog;
+        String[] items = {"Video"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setItems(items, (dialog, which) -> {
+            if (items.length > 0) {
+                if (items[which].equals("Video")) {
+                    CallManager.callContact(MessagesActivity.this, true, false, recipientId);
+                }
+            }
+        });
+        builder.setCancelable(true);
+        myDialog = builder.create();
+        myDialog.show();
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
@@ -1903,7 +1918,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
                     break;
 
-                case R.id.attach_file:
+                case R.id.attachBtn:
                     if (!isOpen) {
                         isOpen = true;
                         animateItems(true);
@@ -1926,7 +1941,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
         } else {
 
             switch (item.getItemId()) {
-                case R.id.attach_file:
+                case R.id.attachBtn:
                     if (!isOpen) {
                         isOpen = true;
                         animateItems(true);
@@ -1943,6 +1958,14 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
                     }
                     makeCall();
                     break;
+                case R.id.video_contact:
+                    if (isOpen) {
+                        isOpen = false;
+                        animateItems(false);
+                    }
+                    makeVideoCall();
+                    break;
+
                 case R.id.search_messages:
                     launcherSearchView();
                     break;

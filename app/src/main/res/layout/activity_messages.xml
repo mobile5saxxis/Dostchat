@@ -328,8 +328,9 @@
                                 android:textSize="16sp"
                                 emojicon:emojiconSize="30sp" />
                             <ImageButton
-                                android:id="@+id/attach_file"
+                                android:id="@+id/attachBtn"
                                 android:layout_width="wrap_content"
+                                android:padding="6dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@color/colorWhite"
