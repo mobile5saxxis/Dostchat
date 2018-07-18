@@ -556,7 +556,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
             }
         });
-        anim.setDuration(200);
+        anim.setDuration(2000);
         view.setVisibility(View.VISIBLE);
         anim.start();
     }
@@ -567,7 +567,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
      * @param opened
      */
     private void animateItems(boolean opened) {
-        float startRadius = 0.0f;
+        float startRadius = 10f;
         float endRadius = Math.max(mFrameLayoutReveal.getWidth(), mFrameLayoutReveal.getHeight());
         if (opened) {
             int cy = mFrameLayoutReveal.getRight();
@@ -1901,36 +1901,14 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
 
     private void makeCall() {
-        AlertDialog myDialog;
-        String[] items = {"Voice"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setItems(items, (dialog, which) -> {
-            if (items.length > 0) {
-                if (items[which].equals("Voice")) {
-                    CallManager.callContact(MessagesActivity.this, true, false, recipientId);
-                }
-            }
-        });
-        builder.setCancelable(true);
-        myDialog = builder.create();
-        myDialog.show();
+
+        CallManager.callContact(MessagesActivity.this, true, false, recipientId);
     }
 
     private void makeVideoCall() {
 
-        AlertDialog myDialog;
-        String[] items = {"Video"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setItems(items, (dialog, which) -> {
-            if (items.length > 0) {
-                if (items[which].equals("Video")) {
-                    CallManager.callContact(MessagesActivity.this, true, false, recipientId);
-                }
-            }
-        });
-        builder.setCancelable(true);
-        myDialog = builder.create();
-        myDialog.show();
+        CallManager.callContact(MessagesActivity.this, true, true, recipientId);
+
     }
 
 

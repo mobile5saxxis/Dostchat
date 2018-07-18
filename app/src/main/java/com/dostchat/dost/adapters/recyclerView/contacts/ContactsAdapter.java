@@ -227,6 +227,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         CallManager.callContact(this.mActivity, true, false, contactsModel.getId());
                         break;
                     case R.id.CallVideoBtn:
+                        CallManager.callContact(this.mActivity, true, true, contactsModel.getId());
 
                         break;
                     default:

@@ -514,5 +514,6 @@
     <string name="deleting_contacts">Deleting Contacts</string>
     <string name="connection_problem">Connection Problem</string>
     <string name="problem_sending_or_receiving_messages">Problem Sending or Receiving messages</string>
+    <string name="qr_code">QrCode</string>
 
 </resources>
