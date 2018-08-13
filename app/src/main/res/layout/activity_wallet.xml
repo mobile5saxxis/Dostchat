@@ -26,11 +26,7 @@
     <include layout="@layout/content_wallet" />
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        app:srcCompat="@drawable/qr_static" />
+
 
 
 

@@ -47,14 +47,18 @@ public abstract class BaseActivity extends AppCompatActivity {
                 } else {
                     layout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 }
-                initUIandEvent();
+                try {
+                    initUIandEvent();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
-    protected abstract void initUIandEvent();
+    protected abstract void initUIandEvent() throws Exception;
 
-    protected abstract void deInitUIandEvent();
+    protected abstract void deInitUIandEvent() throws Exception;
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -84,7 +88,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        deInitUIandEvent();
+        try {
+            deInitUIandEvent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         super.onDestroy();
     }
 

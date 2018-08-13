@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/title_tabs_messages"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
@@ -17,7 +17,7 @@
         android:gravity="center"
         android:text="@string/chats_title_tab"
         android:textColor="@android:color/white"
-        android:textSize="13sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         android:visibility="visible" />
 

@@ -532,7 +532,8 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
         int cx = (startView.getLeft() + startView.getRight()) / 2;
         int cy = (startView.getTop() + startView.getBottom()) / 2;
 
-        int finalRadius = Math.max(view.getHeight() - cx, cx);
+        int finalRadius = Math.min(view.getHeight() - cx, cy);
+
 
         Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
         anim.addListener(new Animator.AnimatorListener() {
@@ -543,6 +544,8 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                mFrameLayoutReveal.setVisibility(View.VISIBLE);
+
 
             }
 
@@ -556,8 +559,14 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
             }
         });
-        anim.setDuration(2000);
-        view.setVisibility(View.VISIBLE);
+        anim.setDuration(20);
+        if(view.callOnClick()) {
+            view.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            view.setVisibility(View.VISIBLE);
+        }
         anim.start();
     }
 
@@ -574,7 +583,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             int dx = mFrameLayoutReveal.getTop();
             Animator supportAnimator = ViewAnimationUtils.createCircularReveal(mFrameLayoutReveal, cy, dx, startRadius, endRadius);
             supportAnimator.setInterpolator(new AccelerateInterpolator());
-            supportAnimator.setDuration(400);
+            supportAnimator.setDuration(20);
             supportAnimator.addListener(mAnimatorListenerOpen);
             supportAnimator.start();
         } else {
@@ -582,7 +591,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             int dx = mFrameLayoutReveal.getTop();
             Animator supportAnimator2 = ViewAnimationUtils.createCircularReveal(mFrameLayoutReveal, cy, dx, endRadius, startRadius);
             supportAnimator2.setInterpolator(new DecelerateInterpolator());
-            supportAnimator2.setDuration(400);
+            supportAnimator2.setDuration(20);
             supportAnimator2.addListener(mAnimatorListenerClose);
             supportAnimator2.start();
         }
@@ -1932,16 +1941,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
 
                     break;
 
-                case R.id.attachBtn:
-                    if (!isOpen) {
-                        isOpen = true;
-                        animateItems(true);
 
-                    } else {
-                        isOpen = false;
-                        animateItems(false);
-                    }
-                    break;
                 case R.id.search_messages_group:
                     launcherSearchView();
                     break;

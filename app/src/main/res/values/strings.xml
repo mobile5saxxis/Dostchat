@@ -48,11 +48,11 @@
     <string name="title_sign_out">Log out</string>
     <string name="selected_count">%1$s selected</string>
     <!-- icons -->
-    <string name="icon_no_calls">\ue830</string>
-    <string name="icon_crash">\ue840</string>
-    <string name="icon_update">\ue865</string>
-    <string name="icon_no_contacts">\ue82b</string>
-    <string name="icon_no_conversations">\ue818</string>
+    <string name="icon_no_calls">No Calls</string>
+    <string name="icon_crash">\Crash</string>
+    <string name="icon_update">\Icon</string>
+    <string name="icon_no_contacts">No Contacts</string>
+    <string name="icon_no_conversations">No Chat</string>
     <string name="icon_menu_home">\ue800</string>
     <string name="icon_menu_chat_on">\ue83f</string>
     <string name="icon_menu_entertainment">\ue824</string>
@@ -104,7 +104,7 @@
     <string name="please_enter_your_ver_code">Please enter your verification code</string>
     <string name="enter_a_val_number">Enter a valid mobile phone</string>
     <string name="change_number">Change number</string>
-    <string name="invite">INVITE</string>
+    <string name="invite">Invite</string>
     <string name="your_current_status">Your current status</string>
     <string name="select_your_new_status">Select your new status</string>
     <string name="title_activity_status">Status</string>
@@ -433,9 +433,9 @@
     <string name="restore_is_done">Restore Backup is done successfully at :</string>
     <string name="failed_to_restore_the_backup_try">Failed to restore the backup,please try again</string>
     <string name="please_wait_a_moment">Please Wait a moment …</string>
-    <string name="chats_title_tab">Chat</string>
-    <string name="contacts_title_tab">Contacts</string>
-    <string name="calls_title_tab">Calls</string>
+    <string name="chats_title_tab">CHAT</string>
+    <string name="contacts_title_tab">CONTACT</string>
+    <string name="calls_title_tab">CALLS</string>
     <string name="current_language">current</string>
 
     <string name="block_user_make_sure">You will block this user ,so he will no longer be able to call you or send you messages .Are you sure ?</string>
@@ -479,7 +479,7 @@
     <string name="chat">Chat</string>
     <string name="sos">SOS</string>
     <string name="wallet">Wallet</string>
-    <string name="dostchat">dostchat</string>
+    <string name="dostchat">Dostchat</string>
     <string name="add_money_to_dost_chat">Add Money to Dost Chat Wallet</string>
     <string name="pay">Pay</string>
     <string name="add_money">Add money</string>
@@ -515,5 +515,7 @@
     <string name="connection_problem">Connection Problem</string>
     <string name="problem_sending_or_receiving_messages">Problem Sending or Receiving messages</string>
     <string name="qr_code">QrCode</string>
+    <string name="scan_qr_code">Scan Qr</string>
+    <string name="file_limit_size_upload_format">Limit</string>
 
 </resources>

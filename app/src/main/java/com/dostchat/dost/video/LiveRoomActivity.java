@@ -75,7 +75,7 @@ public class LiveRoomActivity extends BaseActivity implements AGEventHandler {
     }
 
     @Override
-    protected void initUIandEvent() {
+    protected void initUIandEvent() throws Exception {
         event().addEventHandler(this);
 
         Intent i = getIntent();
@@ -163,7 +163,7 @@ public class LiveRoomActivity extends BaseActivity implements AGEventHandler {
         return profileIndex;
     }
 
-    private void doConfigEngine(String encryptionKey, String encryptionMode) {
+    private void doConfigEngine(String encryptionKey, String encryptionMode) throws Exception {
         int vProfile = VIDEO_PROFILES[getVideoProfileIndex()];
 
         worker().configEngine(vProfile, encryptionKey, encryptionMode);
@@ -197,7 +197,7 @@ public class LiveRoomActivity extends BaseActivity implements AGEventHandler {
     }
 
     @Override
-    protected void deInitUIandEvent() {
+    protected void deInitUIandEvent() throws Exception {
 
         doLeaveChannel();
         event().removeEventHandler(this);
@@ -205,7 +205,7 @@ public class LiveRoomActivity extends BaseActivity implements AGEventHandler {
         mUidsList.clear();
     }
 
-    private void doLeaveChannel() {
+    private void doLeaveChannel() throws Exception {
         worker().leaveChannel(config().mChannel);
         worker().preview(false, null, 0);
     }

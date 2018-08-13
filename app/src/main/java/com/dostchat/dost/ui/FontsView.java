@@ -12,7 +12,7 @@ import com.dostchat.dost.R;
  * Created by Abderrahim on 11/5/2015.
  * This class to create icon by font awesome
  */
-public class FontsView extends TextView {
+public class FontsView extends android.support.v7.widget.AppCompatTextView {
 
 
     public FontsView(Context context, AttributeSet attrs) {
@@ -33,9 +33,7 @@ public class FontsView extends TextView {
 
             String font = tA.getString(R.styleable.FontsView_fontValue);
 
-            if (font == null) {
-                font = "Linearicons_free.ttf";
-            }
+
 
             String fontPath = String.format("fonts/%s", font);
 

@@ -6,7 +6,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 16
@@ -19,7 +19,7 @@ android {
 
 dependencies {
     def supportLibsVer = "25.2.0"
-    compile "com.android.support:support-v4:$supportLibsVer"
+    implementation "com.android.support:support-v4:$supportLibsVer"
 
 }
 

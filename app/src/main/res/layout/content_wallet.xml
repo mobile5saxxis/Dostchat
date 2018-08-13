@@ -37,7 +37,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -62,15 +62,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="center"
+               >
 
                 <ImageView
                     android:id="@+id/image1"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_credit_pay"
-                    android:tint="@color/white" />
+                    app:srcCompat="@drawable/ic_credit_pay"
+                    android:tint="@color/colorPrimary" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -79,7 +80,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp"
                     android:text="@string/pay"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/colorPrimary" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -87,15 +88,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="center"
+                >
 
                 <ImageView
                     android:id="@+id/image2"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_add_rupee"
-                    android:tint="@color/white" />
+                    app:srcCompat="@drawable/ic_add_rupee"
+                    android:tint="@color/colorPrimary" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,7 +106,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="4dp"
                     android:text="@string/add_money"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/colorPrimary" />
             </RelativeLayout>
 
         </LinearLayout>
@@ -142,10 +144,10 @@
 
                 <ImageView
                     android:id="@+id/image3"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_mobile"
+                    app:srcCompat="@drawable/ic_mobile"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -167,10 +169,10 @@
 
                 <ImageView
                     android:id="@+id/image4"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_mobile"
+                    app:srcCompat="@drawable/ic_mobile"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -192,10 +194,10 @@
 
                 <ImageView
                     android:id="@+id/image5"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_dth"
+                    app:srcCompat="@drawable/ic_dth"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -217,10 +219,10 @@
 
                 <ImageView
                     android:id="@+id/image6"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_data_card"
+                    app:srcCompat="@drawable/ic_data_card"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -240,7 +242,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -273,10 +276,10 @@
 
                 <ImageView
                     android:id="@+id/image7"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_electric"
+                    app:srcCompat="@drawable/ic_electric"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -297,10 +300,10 @@
 
                 <ImageView
                     android:id="@+id/image8"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_gas"
+                    app:srcCompat="@drawable/ic_gas"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -321,10 +324,10 @@
 
                 <ImageView
                     android:id="@+id/image9"
-                    android:layout_width="36dp"
+                    android:layout_width="32dp"
                     android:layout_height="36dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_tap"
+                    app:srcCompat="@drawable/ic_tap"
                     android:tint="@color/colorPrimary" />
 
                 <TextView
@@ -353,7 +356,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:visibility="gone"/>
 
 
 </LinearLayout>

@@ -37,6 +37,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Random;
 import java.util.Set;
 
 public class CameraFragment extends Fragment implements
@@ -195,23 +196,24 @@ public class CameraFragment extends Fragment implements
             getBackgroundHandler().post(new Runnable() {
                 @Override
                 public void run() {
-                    File file = new File(getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES),
-                            "picture.jpg");
-                    OutputStream os = null;
+                    String root = Environment.getExternalStorageDirectory().toString();
+                    File myDir = new File(root + "/Dost Chat/Dost Chat images");
+                    if (!myDir.exists()) {
+                        myDir.mkdirs();
+                    }
+                    Random generator = new Random();
+                    int n = 10000;
+                    n = generator.nextInt(n);
+                    String fname = "Image-"+ n +".jpg";
+                    File file = new File (myDir, fname);
+                    if (file.exists ())
+                        file.delete ();
                     try {
-                        os = new FileOutputStream(file);
+                        FileOutputStream os = new FileOutputStream(file);
                         os.write(data);
                         os.close();
                     } catch (IOException e) {
-                        Log.w(TAG, "Cannot write to " + file, e);
-                    } finally {
-                        if (os != null) {
-                            try {
-                                os.close();
-                            } catch (IOException e) {
-                                // Ignore
-                            }
-                        }
+                        e.printStackTrace();
                     }
                 }
             });

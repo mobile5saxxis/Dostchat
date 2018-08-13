@@ -63,7 +63,11 @@ public class WorkerThread extends Thread {
                     break;
                 case ACTION_WORKER_JOIN_CHANNEL:
                     String[] data = (String[]) msg.obj;
-                    mWorkerThread.joinChannel(data[0], msg.arg1);
+                    try {
+                        mWorkerThread.joinChannel(data[0], msg.arg1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case ACTION_WORKER_LEAVE_CHANNEL:
                     String channel = (String) msg.obj;
@@ -71,11 +75,19 @@ public class WorkerThread extends Thread {
                     break;
                 case ACTION_WORKER_CONFIG_ENGINE:
                     Object[] configData = (Object[]) msg.obj;
-                    mWorkerThread.configEngine((int) configData[0], (String) configData[1], (String) configData[2]);
+                    try {
+                        mWorkerThread.configEngine((int) configData[0], (String) configData[1], (String) configData[2]);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case ACTION_WORKER_PREVIEW:
                     Object[] previewData = (Object[]) msg.obj;
-                    mWorkerThread.preview((boolean) previewData[0], (SurfaceView) previewData[1], (int) previewData[2]);
+                    try {
+                        mWorkerThread.preview((boolean) previewData[0], (SurfaceView) previewData[1], (int) previewData[2]);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
             }
         }
@@ -103,7 +115,11 @@ public class WorkerThread extends Thread {
 
         mWorkerHandler = new WorkerThreadHandler(this);
 
-        ensureRtcEngineReadyLock();
+        try {
+            ensureRtcEngineReadyLock();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         mReady = true;
 
@@ -124,7 +140,7 @@ public class WorkerThread extends Thread {
     public final void disablePreProcessor() {
     }
 
-    public final void joinChannel(final String channel, int uid) {
+    public final void joinChannel(final String channel, int uid) throws Exception {
         if (Thread.currentThread() != this) {
             log.warn("joinChannel() - worker thread asynchronously " + channel + " " + uid);
             Message envelop = new Message();
@@ -172,7 +188,7 @@ public class WorkerThread extends Thread {
 
     private final MyEngineEventHandler mEngineEventHandler;
 
-    public final void configEngine(int vProfile, String encryptionKey, String encryptionMode) {
+    public final void configEngine(int vProfile, String encryptionKey, String encryptionMode) throws Exception {
         if (Thread.currentThread() != this) {
             log.warn("configEngine() - worker thread asynchronously " + vProfile + " " + encryptionMode);
             Message envelop = new Message();
@@ -196,7 +212,7 @@ public class WorkerThread extends Thread {
         log.debug("configEngine " + mEngineConfig.mVideoProfile + " " + encryptionMode);
     }
 
-    public final void preview(boolean start, SurfaceView view, int uid) {
+    public final void preview(boolean start, SurfaceView view, int uid) throws Exception {
         if (Thread.currentThread() != this) {
             log.warn("preview() - worker thread asynchronously " + start + " " + view + " " + (uid & 0XFFFFFFFFL));
             Message envelop = new Message();
@@ -221,7 +237,7 @@ public class WorkerThread extends Thread {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
-    private RtcEngine ensureRtcEngineReadyLock() {
+    private RtcEngine ensureRtcEngineReadyLock() throws Exception {
         if (mRtcEngine == null) {
             String appId = mContext.getString(R.string.private_app_id);
             if (TextUtils.isEmpty(appId)) {

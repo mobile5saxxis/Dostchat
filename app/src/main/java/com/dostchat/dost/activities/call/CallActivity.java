@@ -1,7 +1,9 @@
 package com.dostchat.dost.activities.call;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -9,31 +11,47 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.hardware.display.DisplayManager;
+import android.hardware.display.VirtualDisplay;
+import android.media.MediaRecorder;
+import android.media.projection.MediaProjection;
+import android.media.projection.MediaProjectionManager;
+import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.AppCompatImageView;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.SparseIntArray;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.dostchat.dost.activities.main.MainActivity;
+import com.dostchat.dost.activities.main.Function;
 import com.dostchat.dost.app.DostChatApp;
-import com.dostchat.dost.receivers.DeviceAdmin;
-import com.dostchat.dost.services.TService;
+
 import com.facebook.network.connectionclass.ConnectionClassManager;
 import com.facebook.network.connectionclass.ConnectionQuality;
 import com.facebook.network.connectionclass.DeviceBandwidthSampler;
@@ -82,13 +100,7 @@ import io.realm.RealmQuery;
 import pl.bclogic.pulsator4droid.library.PulsatorLayout;
 
 
-/**
- * Created by Abderrahim El imame on 10/20/16.
- *
- * @Email : abderrahim.elimame@gmail.com
- * @Author : https://twitter.com/Ben__Cherif
- * @Skype : ben-_-cherif
- */
+
 
 public class CallActivity extends Activity {
     private static final String VIDEO_CODEC_VP9 = "VP8";
@@ -113,6 +125,26 @@ public class CallActivity extends Activity {
     private VideoRenderer.Callbacks localRender;
     private VideoRenderer.Callbacks remoteRender;
     private static WebRtcClient webRtcClient;
+    private static final String TAG = "MainActivity";
+    private int mScreenDensity;
+
+    private MediaProjectionManager mProjectionManager;
+    private static final int DISPLAY_WIDTH = 720;
+    private static final int DISPLAY_HEIGHT = 1280;
+    private MediaProjection mMediaProjection;
+    private VirtualDisplay mVirtualDisplay;
+    private MediaProjectionCallback mMediaProjectionCallback;
+    private MediaRecorder mMediaRecorder;
+    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+    private static final int REQUEST_PERMISSION_KEY = 1;
+    boolean isRecording = false;
+
+    static {
+        ORIENTATIONS.append(Surface.ROTATION_0, 90);
+        ORIENTATIONS.append(Surface.ROTATION_90, 0);
+        ORIENTATIONS.append(Surface.ROTATION_180, 270);
+        ORIENTATIONS.append(Surface.ROTATION_270, 180);
+    }
 
     private String userPhone;
     private String userSocketId = "";
@@ -168,6 +200,12 @@ public class CallActivity extends Activity {
     @BindView(R.id.caller_phone)
     TextView callerPhoneField;
 
+    @BindView(R.id.btn_action)
+    ImageView btn_action;
+
+    @BindView(R.id.call_record)
+    ImageView call_record;
+
     @BindView(R.id.call_title)
     TextView callTitle;
 
@@ -180,8 +218,7 @@ public class CallActivity extends Activity {
     @BindView(R.id.hang_up)
     AppCompatImageView hangUpBtn;
 
-    @BindView(R.id.call_record)
-    AppCompatImageView callRecordBtn;
+
 
     @BindView(R.id.hang_up_layout)
     FrameLayout hangUpLayout;
@@ -195,6 +232,8 @@ public class CallActivity extends Activity {
     private NetworkMonitorAutoDetect networkMonitorAutoDetect;
     private int callerID;
 
+    @SuppressLint("WrongConstant")
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -234,7 +273,124 @@ public class CallActivity extends Activity {
         mDeviceBandwidthSampler = DeviceBandwidthSampler.getInstance();
         mListener = new ConnectionChangedListener();
         new DownloadImage().execute(mURL);
+        String[] PERMISSIONS = {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        };
+        if (!Function.hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, REQUEST_PERMISSION_KEY);
+        }
+
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        mScreenDensity = metrics.densityDpi;
+
+        mMediaRecorder = new MediaRecorder();
+
+        mProjectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
+
+
+        btn_action = (ImageView) findViewById(R.id.btn_action);
+        btn_action.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onToggleScreenShare();
+
+            }
+        });
     }
+    public void actionBtnReload() {
+        if (isRecording) {
+            Toast.makeText(this, "Video Record Started", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(this, "Video Record Stoped and saved to phone storage/Dost Chat/record.mp4 ", Toast.LENGTH_SHORT).show();
+        }
+
+}
+
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void onToggleScreenShare() {
+        if (!isRecording) {
+            initRecorder();
+            shareScreen();
+        } else {
+            mMediaRecorder.stop();
+            mMediaRecorder.reset();
+            stopScreenSharing();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void shareScreen() {
+        if (mMediaProjection == null) {
+            startActivityForResult(mProjectionManager.createScreenCaptureIntent(), REQUEST_CODE);
+            return;
+        }
+        mVirtualDisplay = createVirtualDisplay();
+        mMediaRecorder.start();
+        isRecording = true;
+        actionBtnReload();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private VirtualDisplay createVirtualDisplay() {
+        return mMediaProjection.createVirtualDisplay("MainActivity", DISPLAY_WIDTH, DISPLAY_HEIGHT, mScreenDensity,
+                DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR, mMediaRecorder.getSurface(), null, null);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void initRecorder() {
+        try {
+            mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+            mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4); //THREE_GPP
+            mMediaRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/Dost Chat/Record.mp4");
+            mMediaRecorder.setVideoSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
+            mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+            mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            mMediaRecorder.setVideoEncodingBitRate(512 * 1000);
+            mMediaRecorder.setVideoFrameRate(16); // 30
+            mMediaRecorder.setVideoEncodingBitRate(3000000);
+            int rotation = getWindowManager().getDefaultDisplay().getRotation();
+            int orientation = ORIENTATIONS.get(rotation + 90);
+            mMediaRecorder.setOrientationHint(orientation);
+            mMediaRecorder.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void stopScreenSharing() {
+        if (mVirtualDisplay == null) {
+            return;
+        }
+        mVirtualDisplay.release();
+        destroyMediaProjection();
+        isRecording = false;
+        actionBtnReload();
+    }
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void destroyMediaProjection() {
+        if (mMediaProjection != null) {
+            mMediaProjection.unregisterCallback(mMediaProjectionCallback);
+            mMediaProjection.stop();
+            mMediaProjection = null;
+        }
+        Log.i(TAG, "MediaProjection Stopped");
+    }
+
 
     private void initializerView() {
 
@@ -292,6 +448,7 @@ public class CallActivity extends Activity {
         } else {
             callingLayout.setVisibility(View.VISIBLE);
             switchCamera.setVisibility(View.INVISIBLE);
+
             switchCamera.setClickable(false);
             videoCallLayout.setVisibility(View.GONE);
             callTitle.setText(R.string.voice_call);
@@ -304,9 +461,7 @@ public class CallActivity extends Activity {
                 webRtcClient.switchCamera(this);
             }
         });
-        hangUpBtn.setOnClickListener(v -> {
-            hangUp();
-        });
+        hangUpBtn.setOnClickListener(v -> hangUp());
 
         micToggle.setOnClickListener(v -> {
             if (webRtcClient != null) {
@@ -318,32 +473,7 @@ public class CallActivity extends Activity {
             }
         });
 
-        callRecordBtn.setOnClickListener(v1 -> {
-            if (isMyServiceRunning(TService.class)) {
-                Toast.makeText(this, "Recording stopped", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(CallActivity.this, TService.class);
-                stopService(intent);
-            }
-            else
-            {
-                try {
-                    // Initiate DevicePolicyManager.
-                    DevicePolicyManager mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-                    ComponentName mAdminName = new ComponentName(this, DeviceAdmin.class);
 
-                    if (mDPM != null && !mDPM.isAdminActive(mAdminName)) {
-                        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-                        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
-                        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Click on Activate button to secure your application.");
-                        startActivityForResult(intent, REQUEST_CODE);
-                    }
-
-                    Toast.makeText(this, "Recording started", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
         networkDetection();
     }
@@ -377,27 +507,19 @@ public class CallActivity extends Activity {
                         break;
                     case MODERATE:
                         connectionStatus.setText(R.string.you_are_using_a_moderate_connection);
-                        new Handler().postDelayed(() -> {
-                            connectionStatus.setVisibility(View.GONE);
-                        }, 4000);
+                        new Handler().postDelayed(() -> connectionStatus.setVisibility(View.GONE), 4000);
                         break;
                     case POOR:
                         connectionStatus.setText(R.string.you_are_using_a_poor_connection);
-                        new Handler().postDelayed(() -> {
-                            connectionStatus.setVisibility(View.GONE);
-                        }, 4000);
+                        new Handler().postDelayed(() -> connectionStatus.setVisibility(View.GONE), 4000);
                         break;
                     case GOOD:
                         connectionStatus.setText(R.string.you_are_using_a_good_connection);
-                        new Handler().postDelayed(() -> {
-                            connectionStatus.setVisibility(View.GONE);
-                        }, 4000);
+                        new Handler().postDelayed(() -> connectionStatus.setVisibility(View.GONE), 4000);
                         break;
                     case UNKNOWN:
                         connectionStatus.setText(R.string.connection_is_not_available);
-                        new Handler().postDelayed(() -> {
-                            connectionStatus.setVisibility(View.GONE);
-                        }, 4000);
+                        new Handler().postDelayed(() -> connectionStatus.setVisibility(View.GONE), 4000);
                         hangUp();
                         break;
                 }
@@ -406,28 +528,83 @@ public class CallActivity extends Activity {
     }
 
     private void setTypeFaces() {
-        if (AppConstants.ENABLE_FONTS_TYPES) {
-            callTimer.setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            callTitle.setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            callStatus.setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            connectionStatus.setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            callerPhoneField.setTypeface(AppHelper.setTypeFace(this, "Futura"));
-        }
+
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (REQUEST_CODE == requestCode) {
-            Intent intent = new Intent(CallActivity.this, TService.class);
-            startService(intent);
+
+        if (resultCode != RESULT_OK) {
+            Toast.makeText(this, "Screen Cast Permission Denied", Toast.LENGTH_SHORT).show();
+            isRecording = false;
+            actionBtnReload();
+            return;
+        }
+        mMediaProjectionCallback = new MediaProjectionCallback();
+        mMediaProjection = mProjectionManager.getMediaProjection(resultCode, data);
+        mMediaProjection.registerCallback(mMediaProjectionCallback, null);
+        mVirtualDisplay = createVirtualDisplay();
+        mMediaRecorder.start();
+        isRecording = true;
+        actionBtnReload();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PERMISSION_KEY:
+            {
+                if ((grantResults.length > 0) && (grantResults[0] + grantResults[1]) == PackageManager.PERMISSION_GRANTED) {
+                    onToggleScreenShare();
+                } else {
+                    isRecording = false;
+                    actionBtnReload();
+                    Snackbar.make(findViewById(android.R.id.content), "Please enable Microphone and Storage permissions.",
+                            Snackbar.LENGTH_INDEFINITE).setAction("ENABLE",
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent();
+                                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                    intent.addCategory(Intent.CATEGORY_DEFAULT);
+                                    intent.setData(Uri.parse("package:" + getPackageName()));
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                                    startActivity(intent);
+                                }
+                            }).show();
+                }
+                return;
+            }
+        }
+    }
+
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private class MediaProjectionCallback extends MediaProjection.Callback {
+        @Override
+        public void onStop() {
+            if (isRecording) {
+                isRecording = false;
+                actionBtnReload();
+                mMediaRecorder.stop();
+                mMediaRecorder.reset();
+            }
+            mMediaProjection = null;
+            stopScreenSharing();
         }
     }
 
     private void networkDetection() {
-        networkMonitorAutoDetect = new NetworkMonitorAutoDetect(connectionType -> {
+        networkMonitorAutoDetect = new NetworkMonitorAutoDetect((NetworkMonitorAutoDetect.ConnectionType connectionType) -> {
             AppHelper.LogCat("onConnectionTypeChanged " + connectionType.name());
             connectionStatus.setVisibility(View.VISIBLE);
             switch (connectionType) {
@@ -442,16 +619,14 @@ public class CallActivity extends Activity {
                     break;
                 case CONNECTION_2G:
                     connectionStatus.setText(R.string.you_are_using_a_slower_connection);
-                    new Handler().postDelayed(() -> {
-                        connectionStatus.setVisibility(View.GONE);
-                    }, 4000);
+                    new Handler().postDelayed(() -> connectionStatus.setVisibility(View.GONE), 4000);
                     break;
                 case CONNECTION_NONE:
                 case CONNECTION_UNKNOWN:
                     connectionStatus.setText(R.string.connection_is_not_available);
                     try {
                         Thread.sleep(2000);
-                    } catch (InterruptedException e) {
+                    } catch (InterruptedException ignored) {
                     }
                     hangUp();
                     break;
@@ -468,59 +643,58 @@ public class CallActivity extends Activity {
 
         int historyCallId = getHistoryCallId(PreferenceManager.getID(this), callerID, isVideoCall, realm);
 
-        if (historyCallId == 0) {
-            realm.executeTransaction(realm1 -> {
-                ContactsModel contactsModel1;
-                if (isAccepted) {
-                    contactsModel1 = realm1.where(ContactsModel.class).equalTo("phone", callerPhoneAccept).findFirst();
-                } else {
-                    contactsModel1 = realm1.where(ContactsModel.class).equalTo("phone", callerPhone).findFirst();
-                }
+        if (historyCallId == 0) realm.executeTransaction((Realm realm1) -> {
+            ContactsModel contactsModel1;
+            if (isAccepted) {
+                contactsModel1 = realm1.where(ContactsModel.class).equalTo("phone", callerPhoneAccept).findFirst();
+            } else {
+                contactsModel1 = realm1.where(ContactsModel.class).equalTo("phone", callerPhone).findFirst();
+            }
 
-                int lastID = RealmBackupRestore.getCallLastId();
-                CallsModel callsModel = new CallsModel();
-                callsModel.setId(lastID);
-                if (isVideoCall)
-                    callsModel.setType(AppConstants.VIDEO_CALL);
-                else
-                    callsModel.setType(AppConstants.VOICE_CALL);
-                callsModel.setContactsModel(contactsModel1);
-                if (isAccepted)
-                    callsModel.setPhone(callerPhoneAccept);
-                else
-                    callsModel.setPhone(callerPhone);
-                callsModel.setFrom(PreferenceManager.getID(this));
-                callsModel.setTo(contactsModel1.getId());
-                callsModel.setDuration("00:00");
-                callsModel.setCounter(1);
-                callsModel.setDate(callTime);
-                callsModel.setReceived(false);
+            int lastID = RealmBackupRestore.getCallLastId();
+            CallsModel callsModel = new CallsModel();
+            callsModel.setId(lastID);
+            if (isVideoCall)
+                callsModel.setType(AppConstants.VIDEO_CALL);
+            else
+                callsModel.setType(AppConstants.VOICE_CALL);
+            callsModel.setContactsModel(contactsModel1);
+            if (isAccepted)
+                callsModel.setPhone(callerPhoneAccept);
+            else
+                callsModel.setPhone(callerPhone);
+            callsModel.setFrom(PreferenceManager.getID(this));
+            callsModel.setTo(contactsModel1.getId());
+            callsModel.setDuration("00:00");
+            callsModel.setCounter(1);
+            callsModel.setDate(callTime);
+            callsModel.setReceived(false);
 
-                CallsInfoModel callsInfoModel = new CallsInfoModel();
-                RealmList<CallsInfoModel> callsInfoModelRealmList = new RealmList<CallsInfoModel>();
-                int lastInfoID = RealmBackupRestore.getCallInfoLastId();
-                callsInfoModel.setId(lastInfoID);
-                if (isVideoCall)
-                    callsInfoModel.setType(AppConstants.VIDEO_CALL);
-                else
-                    callsInfoModel.setType(AppConstants.VOICE_CALL);
-                callsInfoModel.setContactsModel(contactsModel1);
-                if (isAccepted)
-                    callsInfoModel.setPhone(callerPhoneAccept);
-                else
-                    callsInfoModel.setPhone(callerPhone);
-                callsInfoModel.setFrom(PreferenceManager.getID(this));
-                callsInfoModel.setCallId(lastID);
-                callsInfoModel.setTo(contactsModel1.getId());
-                callsInfoModel.setDuration("00:00");
-                callsInfoModel.setDate(callTime);
-                callsInfoModel.setReceived(false);
-                callsInfoModelRealmList.add(callsInfoModel);
-                callsModel.setCallsInfoModels(callsInfoModelRealmList);
-                realm1.copyToRealmOrUpdate(callsModel);
-                EventBus.getDefault().post(new Pusher(AppConstants.EVENT_BUS_CALL_NEW_ROW, lastID));
-            });
-        } else {
+            CallsInfoModel callsInfoModel = new CallsInfoModel();
+            RealmList<CallsInfoModel> callsInfoModelRealmList = new RealmList<>();
+            int lastInfoID = RealmBackupRestore.getCallInfoLastId();
+            callsInfoModel.setId(lastInfoID);
+            if (isVideoCall)
+                callsInfoModel.setType(AppConstants.VIDEO_CALL);
+            else
+                callsInfoModel.setType(AppConstants.VOICE_CALL);
+            callsInfoModel.setContactsModel(contactsModel1);
+            if (isAccepted)
+                callsInfoModel.setPhone(callerPhoneAccept);
+            else
+                callsInfoModel.setPhone(callerPhone);
+            callsInfoModel.setFrom(PreferenceManager.getID(this));
+            callsInfoModel.setCallId(lastID);
+            callsInfoModel.setTo(contactsModel1.getId());
+            callsInfoModel.setDuration("00:00");
+            callsInfoModel.setDate(callTime);
+            callsInfoModel.setReceived(false);
+            callsInfoModelRealmList.add(callsInfoModel);
+            callsModel.setCallsInfoModels(callsInfoModelRealmList);
+            realm1.copyToRealmOrUpdate(callsModel);
+            EventBus.getDefault().post(new Pusher(AppConstants.EVENT_BUS_CALL_NEW_ROW, lastID));
+        });
+        else {
 
             realm.executeTransaction(realm1 -> {
                 ContactsModel contactsModel1;
@@ -680,14 +854,14 @@ public class CallActivity extends Activity {
             }
             try {
                 Thread.sleep(1500);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         } else {
             try {
                 Thread.sleep(1500);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
@@ -709,6 +883,7 @@ public class CallActivity extends Activity {
      * Handle onDestroy event which is implement by RtcListener class
      * Destroy the video source
      */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onDestroy() {
         if (timer != null) {
@@ -724,8 +899,6 @@ public class CallActivity extends Activity {
             webRtcClient = null;
         }
 
-        Intent intent = new Intent(CallActivity.this, TService.class);
-        stopService(intent);
 
         if (voicePulsator.isStarted())
             voicePulsator.stop();
@@ -736,6 +909,7 @@ public class CallActivity extends Activity {
         AppHelper.restartService();
 
         super.onDestroy();
+        destroyMediaProjection();
     }
 
 
@@ -819,7 +993,7 @@ public class CallActivity extends Activity {
 
         try {
             Thread.sleep(1500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
 
         finish();
@@ -834,7 +1008,7 @@ public class CallActivity extends Activity {
         updateUserCall();
         try {
             Thread.sleep(1500);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
         finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
@@ -845,7 +1019,7 @@ public class CallActivity extends Activity {
         try {
             try {
                 Thread.sleep(1500);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
             answer(callId);
         } catch (JSONException e) {
@@ -935,6 +1109,7 @@ public class CallActivity extends Activity {
             animateShowElement(micToggle);
             animateShowElement(hangUpLayout);
 
+
             return true;
         } else if (MotionEvent.ACTION_CANCEL == event.getAction()) {
 
@@ -943,6 +1118,7 @@ public class CallActivity extends Activity {
                 animateHideElement(switchCamera);
                 animateHideElement(micToggle);
                 animateHideElement(hangUpLayout);
+
 
             }, 3000);
         }
@@ -1040,9 +1216,27 @@ public class CallActivity extends Activity {
             this.backPressedThread.interrupt();
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        if (isRecording) {
+            Snackbar.make(findViewById(android.R.id.content), "Wanna Stop recording and exit?",
+                    Snackbar.LENGTH_INDEFINITE).setAction("Stop",
+                    new View.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                        @Override
+                        public void onClick(View v) {
+                            mMediaRecorder.stop();
+                            mMediaRecorder.reset();
+                            Log.v(TAG, "Stopping Recording");
+                            stopScreenSharing();
+                            finish();
+                        }
+                    }).show();
+        } else {
+            finish();
+        }
     }
 
     private Runnable updateTimerThread = new Runnable() {
+        @SuppressLint("SetTextI18n")
         public void run() {
 
             timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
@@ -1069,6 +1263,7 @@ public class CallActivity extends Activity {
     /**
      * AsyncTask for handling downloading and making calls to the timer.
      */
+    @SuppressLint("StaticFieldLeak")
     private class DownloadImage extends AsyncTask<String, Void, Void> {
 
         @Override
@@ -1084,15 +1279,12 @@ public class CallActivity extends Activity {
                 URLConnection connection = new URL(imageURL).openConnection();
                 connection.setUseCaches(false);
                 connection.connect();
-                InputStream input = connection.getInputStream();
-                try {
+                try (InputStream input = connection.getInputStream()) {
                     byte[] buffer = new byte[1024];
 
                     // Do some busy waiting while the stream is open.
                     while (input.read(buffer) != -1) {
                     }
-                } finally {
-                    input.close();
                 }
             } catch (IOException e) {
                 AppHelper.LogCat("Error while downloading image.");

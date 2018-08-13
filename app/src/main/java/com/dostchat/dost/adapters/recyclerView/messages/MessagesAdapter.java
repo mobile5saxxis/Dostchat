@@ -1971,6 +1971,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         }
 
+        @SuppressLint("StaticFieldLeak")
         void downloadFile(MessagesModel messagesModel) {
 
             String fileUrl = null;

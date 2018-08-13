@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/title_tabs_contacts"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:textStyle="bold"
         android:gravity="center"
         android:text="@string/contacts_title_tab"
-        android:textSize="13sp"
+        android:textSize="10sp"
+        android:textStyle="bold"
         android:visibility="visible" />
 
 </LinearLayout>

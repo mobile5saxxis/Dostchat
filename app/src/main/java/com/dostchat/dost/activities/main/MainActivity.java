@@ -5,6 +5,7 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Notification;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -47,7 +48,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.crashlytics.android.answers.InviteEvent;
+import com.dostchat.dost.activities.QrActivity;
 import com.dostchat.dost.activities.messages.MessagesActivity;
+import com.dostchat.dost.activities.settings.AboutActivity;
+import com.dostchat.dost.activities.settings.AccountSettingsActivity;
+import com.dostchat.dost.activities.settings.FAQActivity;
+import com.dostchat.dost.activities.settings.NotificationsSettingsActivity;
 import com.dostchat.dost.fragments.home.ContactsFragment;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -250,11 +257,7 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
     }
 
     private void setTypeFaces() {
-        if (AppConstants.ENABLE_FONTS_TYPES) {
-            ((TextView) findViewById(R.id.title_tabs_messages)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            ((TextView) findViewById(R.id.title_tabs_contacts)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
-            ((TextView) findViewById(R.id.title_tabs_calls)).setTypeface(AppHelper.setTypeFace(this, "Futura"));
-        }
+
     }
 
     private void connectToServer() {
@@ -492,7 +495,7 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        viewPager.setCurrentItem(2);
+        viewPager.setCurrentItem(1);
         tabLayout.getTabAt(0).setCustomView(R.layout.custom_tab_camera);
         tabLayout.getTabAt(1).setCustomView(R.layout.custom_tab_messages);
         tabLayout.getTabAt(2).setCustomView(R.layout.custom_tab_contacts);
@@ -513,11 +516,11 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
                         break;
                     case 1:
                         icon = AppHelper.getVectorDrawable(MainActivity.this, R.drawable.ic_chat_white_24dp);
-                        viewPager.setCurrentItem(1);
-                        findViewById(R.id.counterTabMessages).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter));
-                        findViewById(R.id.counterTabCalls).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
-                        ((TextView) findViewById(R.id.title_tabs_contacts)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
-                        break;
+                    viewPager.setCurrentItem(1);
+                    findViewById(R.id.counterTabMessages).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter));
+                    findViewById(R.id.counterTabCalls).setBackground(AppHelper.getDrawable(MainActivity.this, R.drawable.bg_circle_tab_counter_unselected));
+                    ((TextView) findViewById(R.id.title_tabs_contacts)).setTextColor(AppHelper.getColor(MainActivity.this, R.color.colorWhite));
+                    break;
                     case 2:
                         icon = AppHelper.getVectorDrawable(MainActivity.this, R.drawable.ic_person_add_24dp);
                         viewPager.setCurrentItem(2);
@@ -981,7 +984,35 @@ public class MainActivity extends AppCompatActivity implements NetworkListener, 
             Intent googlePlusIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://business.google.com/b/116877284890183824170/dashboard/l/15299446350798356942"));
             startActivity(googlePlusIntent);
         }
+        else if (id == R.id.nav_QR) {
 
+            AppHelper.LaunchActivity(this, QrActivity.class);
+        }
+        else if (id == R.id.ll_faq) {
+
+            AppHelper.LaunchActivity(this, FAQActivity.class);
+        }
+        else if (id == R.id.invite) {
+
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT,
+                    "Hello get " + DostChatApp.getInstance().getString(R.string.app_name) + " so we can easily chat  with each other !  " + R.string.rate_helper_google_play_url);
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        }
+        else if (id == R.id.nav_notifications) {
+
+            AppHelper.LaunchActivity(this, NotificationsSettingsActivity.class);
+        }
+        else if (id == R.id.nav_about) {
+
+            AppHelper.LaunchActivity(this, AboutActivity.class);
+        }
+        else if (id == R.id.nav_account) {
+
+            AppHelper.LaunchActivity(this, AccountSettingsActivity.class);
+        }
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
     }

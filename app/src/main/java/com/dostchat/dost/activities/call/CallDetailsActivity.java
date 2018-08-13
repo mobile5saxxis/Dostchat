@@ -46,13 +46,7 @@ import io.realm.RealmList;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
-/**
- * Created by Abderrahim El imame on 12/18/16.
- *
- * @Email : abderrahim.elimame@gmail.com
- * @Author : https://twitter.com/Ben__Cherif
- * @Skype : ben-_-cherif
- */
+
 
 public class CallDetailsActivity extends AppCompatActivity {
 
@@ -126,10 +120,8 @@ public class CallDetailsActivity extends AppCompatActivity {
 
     public void UpdateCallsDetailsList(RealmResults<CallsInfoModel> callsModelList) {
         if (callsModelList.size() != 0) {
-            RealmList<CallsInfoModel> callsModels = new RealmList<CallsInfoModel>();
-            for (CallsInfoModel callsModel : callsModelList) {
-                callsModels.add(callsModel);
-            }
+            RealmList<CallsInfoModel> callsModels = new RealmList<>();
+            callsModels.addAll(callsModelList);
             mCallsAdapter.setCalls(callsModels);
         }
     }
@@ -173,23 +165,17 @@ public class CallDetailsActivity extends AppCompatActivity {
             mCallsPresenter.removeCall();
 
         } else if (item.getItemId() == R.id.block_user) {
-            Realm realm2 = DostChatApp.getRealmDatabaseInstance();
+            Realm realm2;
+            realm2 = DostChatApp.getRealmDatabaseInstance();
             AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
             builder2.setMessage(R.string.block_user_make_sure);
-            builder2.setPositiveButton(R.string.Yes, (dialog, whichButton) -> {
-                realm2.executeTransactionAsync(realm1 -> {
-                    ContactsModel contactsModel = realm1.where(ContactsModel.class).equalTo("id", userID).findFirst();
-                    UsersBlockModel usersBlockModel = new UsersBlockModel();
-                    usersBlockModel.setId(RealmBackupRestore.getBlockUserLastId());
-                    usersBlockModel.setContactsModel(contactsModel);
-                    realm1.copyToRealmOrUpdate(usersBlockModel);
-                }, this::refreshMenu, error -> {
-                    AppHelper.LogCat("Block user" + error.getMessage());
-
-                });
-
-
-            });
+            builder2.setPositiveButton(R.string.Yes, (dialog, whichButton) -> realm2.executeTransactionAsync(realm1 -> {
+                ContactsModel contactsModel = realm1.where(ContactsModel.class).equalTo("id", userID).findFirst();
+                UsersBlockModel usersBlockModel = new UsersBlockModel();
+                usersBlockModel.setId(RealmBackupRestore.getBlockUserLastId());
+                usersBlockModel.setContactsModel(contactsModel);
+                realm1.copyToRealmOrUpdate(usersBlockModel);
+            }, this::refreshMenu, error -> AppHelper.LogCat("Block user" + error.getMessage())));
 
             builder2.setNegativeButton(R.string.No, (dialog, whichButton) -> {
 
@@ -202,18 +188,14 @@ public class CallDetailsActivity extends AppCompatActivity {
             Realm realmUnblock = DostChatApp.getRealmDatabaseInstance();
             AlertDialog.Builder builderUnblock = new AlertDialog.Builder(this);
             builderUnblock.setMessage(R.string.unblock_user_make_sure);
-            builderUnblock.setPositiveButton(R.string.Yes, (dialog, whichButton) -> {
-                realmUnblock.executeTransactionAsync(realm1 -> {
-                    UsersBlockModel usersBlockModel = realm1.where(UsersBlockModel.class).equalTo("contactsModel.id", userID).findFirst();
-                    usersBlockModel.deleteFromRealm();
+            builderUnblock.setPositiveButton(R.string.Yes, (dialog, whichButton) -> realmUnblock.executeTransactionAsync(realm1 -> {
+                UsersBlockModel usersBlockModel = realm1.where(UsersBlockModel.class).equalTo("contactsModel.id", userID).findFirst();
+                usersBlockModel.deleteFromRealm();
 
-                }, this::refreshMenu, error -> {
-                    AppHelper.LogCat("Block user" + error.getMessage());
+            }, this::refreshMenu, error -> {
+                AppHelper.LogCat("Block user" + error.getMessage());
 
-                });
-
-
-            });
+            }));
 
             builderUnblock.setNegativeButton(R.string.No, (dialog, whichButton) -> {
 

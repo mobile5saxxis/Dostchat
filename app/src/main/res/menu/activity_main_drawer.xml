@@ -73,6 +73,16 @@
         android:icon="@drawable/ic_youtube"
         android:title="@string/qr_code"
         />
+    <item
+        android:id="@+id/ll_faq"
+        android:icon="@drawable/ic_youtube"
+        android:title="@string/faq"
+        />
+    <item
+        android:id="@+id/invite"
+        android:icon="@drawable/ic_youtube"
+        android:title="@string/invite"
+        />
 
 
 
@@ -120,4 +130,24 @@
         android:title="@string/google_plus"
         android:visible="false"/>
 
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/ic_google_plus"
+        android:title="@string/notifications"
+        />
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_google_plus"
+        android:title="@string/about_and_help"
+       />
+
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_google_plus"
+        android:title="@string/account"
+        />
+
+
+
 </menu>
+

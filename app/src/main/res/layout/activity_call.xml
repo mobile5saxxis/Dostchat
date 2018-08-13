@@ -37,6 +37,17 @@
         android:maxLines="1"
         android:visibility="visible"
         android:id="@+id/location"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </RelativeLayout>
+
+
+
+
 
 
     <FrameLayout
@@ -164,6 +175,16 @@
             android:padding="20dp"
             android:orientation="horizontal">
 
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/call_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_item_rect_ripple"
+                android:clickable="true"
+                android:padding="16dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_callrecord" />
+
 
 
             <android.support.v7.widget.AppCompatImageView
@@ -204,14 +225,16 @@
                 android:clickable="true"
                 android:padding="16dp"
                 app:srcCompat="@drawable/ic_switch_camera_white_24dp" />
+
+
             <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/call_record"
+                android:id="@+id/btn_action"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_item_round_ripple"
                 android:clickable="true"
                 android:padding="16dp"
-                app:srcCompat="@drawable/ic_callrecord" />
+                app:srcCompat="@drawable/ic_video_record" />
 
 
         </LinearLayout>
