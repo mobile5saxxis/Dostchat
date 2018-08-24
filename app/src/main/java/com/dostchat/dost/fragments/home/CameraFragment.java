@@ -197,7 +197,7 @@ public class CameraFragment extends Fragment implements
                 @Override
                 public void run() {
                     String root = Environment.getExternalStorageDirectory().toString();
-                    File myDir = new File(root + "/Dost Chat/Dost Chat images");
+                    File myDir = new File(root + "/DostChat/DostChat images");
                     if (!myDir.exists()) {
                         myDir.mkdirs();
                     }

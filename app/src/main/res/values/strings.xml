@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Dost Chat</string>
+    <string name="app_name">DostChat</string>
 
     <string name="scrollingFABBehavior" translatable="false">com.dostchat.dost.ui.ScrollingFABBehavior</string>
     <string name="auth_type" translatable="false">com.dostchat.dost</string>
@@ -433,8 +433,8 @@
     <string name="restore_is_done">Restore Backup is done successfully at :</string>
     <string name="failed_to_restore_the_backup_try">Failed to restore the backup,please try again</string>
     <string name="please_wait_a_moment">Please Wait a moment …</string>
-    <string name="chats_title_tab">CHAT</string>
-    <string name="contacts_title_tab">CONTACT</string>
+    <string name="chats_title_tab">CHATS</string>
+    <string name="contacts_title_tab">CONTACTS</string>
     <string name="calls_title_tab">CALLS</string>
     <string name="current_language">current</string>
 
@@ -502,7 +502,7 @@
     <string name="flash_on">ON</string>
     <string name="camera_permission_confirmation">This app require the usage of Camera. In order to do that, it needs permission to access camera.</string>
     <string name="camera_permission_not_granted">DostChat app cannot do anything without camera permission.</string>
-    <string name="picture_taken">Picture taken</string>
+    <string name="picture_taken">Picturetaken-saved to Dostchat/DostChat Images</string>
     <string name="aspect_ratio">Aspect ratio</string>
     <string name="switch_camera">Switch camera</string>
     <string name="faq">FAQ</string>

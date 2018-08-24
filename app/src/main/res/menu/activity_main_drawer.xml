@@ -8,6 +8,13 @@
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
 
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_account"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/account"
+        />
+
 
 
 
@@ -70,17 +77,20 @@
 
     <item
         android:id="@+id/nav_QR"
-        android:icon="@drawable/ic_youtube"
+        android:icon="@drawable/ic_qrcode"
+        android:iconTint="@color/colorPrimary"
         android:title="@string/qr_code"
         />
     <item
         android:id="@+id/ll_faq"
-        android:icon="@drawable/ic_youtube"
+        android:icon="@drawable/ic_information_24dp"
+        android:iconTint="@color/colorPrimary"
         android:title="@string/faq"
         />
     <item
         android:id="@+id/invite"
-        android:icon="@drawable/ic_youtube"
+        android:icon="@drawable/ic_share_white_24dp"
+        android:iconTint="@color/colorPrimary"
         android:title="@string/invite"
         />
 
@@ -132,20 +142,16 @@
 
     <item
         android:id="@+id/nav_notifications"
-        android:icon="@drawable/ic_google_plus"
+        android:icon="@drawable/ic_notifications_24dp"
         android:title="@string/notifications"
         />
     <item
         android:id="@+id/nav_about"
-        android:icon="@drawable/ic_google_plus"
+        android:icon="@drawable/ic_about_blue_24dp"
         android:title="@string/about_and_help"
        />
 
-    <item
-        android:id="@+id/nav_account"
-        android:icon="@drawable/ic_google_plus"
-        android:title="@string/account"
-        />
+
 
 
 

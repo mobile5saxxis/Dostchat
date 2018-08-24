@@ -42,7 +42,8 @@
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
-                        android:minHeight="?attr/actionBarSize">
+                        android:minHeight="?attr/actionBarSize"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -121,8 +122,10 @@
                 android:paddingTop="3dp"
                 android:text="Fetching location..."
                 android:textColor="#fff"
-                android:textSize="15dp"
-                android:visibility="gone" />
+                android:textSize="15sp"
+                android:visibility="gone"
+                android:paddingStart="30dp"
+                android:paddingEnd="10dp" />
 
             <View
                 android:layout_width="match_parent"
@@ -296,7 +299,8 @@
                                     android:layout_gravity="center"
                                     android:background="@color/colorWhite"
                                     android:clickable="true"
-                                    app:srcCompat="@drawable/ic_emoticon_24dp" />
+                                    app:srcCompat="@drawable/ic_emoticon_24dp"
+                                    android:contentDescription="TODO" />
 
                                 <ImageView
                                     android:id="@+id/keyboradBtn"
@@ -306,7 +310,8 @@
                                     android:background="@color/colorWhite"
                                     android:clickable="true"
                                     android:visibility="gone"
-                                    app:srcCompat="@drawable/ic_keyboard_gray_24dp" />
+                                    app:srcCompat="@drawable/ic_keyboard_gray_24dp"
+                                    android:contentDescription="TODO" />
 
                             </FrameLayout>
 
@@ -369,7 +374,8 @@
                                     android:layout_height="44dp"
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginTop="1dp"
-                                    app:srcCompat="@drawable/ic_slider_gray_24dp" />
+                                    app:srcCompat="@drawable/ic_slider_gray_24dp"
+                                    android:contentDescription="TODO" />
 
                                 <TextView
                                     android:id="@+id/slideToCancelText"
@@ -406,7 +412,9 @@
                                     android:layout_marginLeft="6dp"
                                     android:text="0:00"
                                     android:textColor="#4d4c4b"
-                                    android:textSize="20sp" />
+                                    android:textSize="20sp"
+                                    android:layout_marginStart="6dp"
+                                    emojicon:ignore="RtlHardcoded" />
                             </LinearLayout>
                         </com.dostchat.dost.ui.FrameLayoutFixed>
 
@@ -417,7 +425,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginRight="10dp">
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp">
 
 
                         <ImageButton
@@ -426,7 +435,8 @@
                             android:layout_height="50dp"
                             android:background="@drawable/bg_before_text_changed"
                             android:visibility="gone"
-                            app:srcCompat="@drawable/ic_send_white_24dp" />
+                            app:srcCompat="@drawable/ic_send_white_24dp"
+                            android:contentDescription="TODO" />
 
                         <ImageButton
                             android:id="@+id/send_record_button"
@@ -434,7 +444,8 @@
                             android:layout_height="50dp"
                             android:background="@drawable/bg_before_text_changed"
                             android:visibility="visible"
-                            app:srcCompat="@drawable/ic_keyboard_voice_white_24dp" />
+                            app:srcCompat="@drawable/ic_keyboard_voice_white_24dp"
+                            android:contentDescription="TODO" />
                     </FrameLayout>
 
                 </LinearLayout>
@@ -447,13 +458,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="64dp">
+            android:layout_marginBottom="65dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:bottomRightRadius="100dp"
+            android:bottomLeftRadius="100dp"
+            android:topLeftRadius="100dp"
+            android:topRightRadius="100dp"
+            >
 
             <LinearLayout
                 android:id="@+id/items_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
+
+
+
+
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -468,7 +490,8 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -478,28 +501,28 @@
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+
+                            emojicon:ignore="NestedWeights">
 
                             <FrameLayout
                                 android:layout_width="@dimen/slide_down_message_items"
-                                android:layout_height="@dimen/slide_down_message_items"
-                                android:background="@drawable/bg_attach_camera">
+                                android:layout_height="@dimen/slide_down_message_items">
 
                                 <ImageView
                                     android:id="@+id/attach_camera"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:background="@drawable/bg_item_round_ripple"
+                                    android:contentDescription="TODO"
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_photo_camera_white_48dp" />
+                                    app:srcCompat="@drawable/attach_camera" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="6dp"
                                 android:text="@string/attach_camera" />
                         </LinearLayout>
 
@@ -515,7 +538,7 @@
                             <FrameLayout
                                 android:layout_width="@dimen/slide_down_message_items"
                                 android:layout_height="@dimen/slide_down_message_items"
-                                android:background="@drawable/bg_attach_document">
+                               >
 
                                 <ImageView
                                     android:id="@+id/attach_document"
@@ -526,13 +549,13 @@
                                     android:clickable="true"
                                     android:focusable="true"
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_insert_drive_file_white_48dp" />
+                                    app:srcCompat="@drawable/attach_document"
+                                    android:contentDescription="TODO" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
                                 android:text="@string/attach_document" />
                         </LinearLayout>
 
@@ -550,7 +573,7 @@
                             <FrameLayout
                                 android:layout_width="@dimen/slide_down_message_items"
                                 android:layout_height="@dimen/slide_down_message_items"
-                                android:background="@drawable/bg_attach_gallery">
+                               >
 
                                 <ImageView
                                     android:id="@+id/attach_image"
@@ -559,14 +582,15 @@
                                     android:layout_gravity="center"
                                     android:background="@drawable/bg_item_round_ripple"
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_photo_white_48dp" />
+                                    app:srcCompat="@drawable/attach_gallery"
+                                    android:contentDescription="TODO" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="6dp"
+
                                 android:text="@string/attach_gallery" />
                         </LinearLayout>
 
@@ -594,23 +618,23 @@
                                 android:layout_width="@dimen/slide_down_message_items"
                                 android:layout_height="@dimen/slide_down_message_items"
                                 android:layout_gravity="center"
-                                android:background="@drawable/bg_attach_location">
+                                >
 
                                 <ImageView
                                     android:id="@+id/attach_record_video"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:background="@drawable/bg_item_round_ripple"
+
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_attach_videocam_white_48dp" />
+                                    app:srcCompat="@drawable/attach_video"
+                                    android:contentDescription="TODO" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="6dp"
                                 android:text="@string/attach_video_record" />
                         </LinearLayout>
 
@@ -627,23 +651,23 @@
                             <FrameLayout
                                 android:layout_width="@dimen/slide_down_message_items"
                                 android:layout_height="@dimen/slide_down_message_items"
-                                android:background="@drawable/bg_attach_audio">
+                                >
 
                                 <ImageView
                                     android:id="@+id/attach_audio"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:background="@drawable/bg_item_round_ripple"
+
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_audio_white_48dp" />
+                                    app:srcCompat="@drawable/attach_audio"
+                                    android:contentDescription="TODO" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="6dp"
                                 android:text="@string/attach_audio" />
                         </LinearLayout>
 
@@ -660,23 +684,22 @@
                             <FrameLayout
                                 android:layout_width="@dimen/slide_down_message_items"
                                 android:layout_height="@dimen/slide_down_message_items"
-                                android:background="@drawable/bg_attach_contact">
+                               >
 
                                 <ImageView
                                     android:id="@+id/attach_video"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:background="@drawable/bg_item_round_ripple"
                                     android:padding="16dp"
-                                    app:srcCompat="@drawable/ic_attach_video_white_48dp" />
+                                    app:srcCompat="@drawable/attach_videoplay"
+                                    android:contentDescription="TODO" />
                             </FrameLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="6dp"
                                 android:text="@string/attach_video" />
                         </LinearLayout>
 

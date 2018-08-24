@@ -16,10 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@drawable/below_shadow_rect" />
+
 
 
         <LinearLayout
@@ -51,12 +48,7 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="66dp"
-            android:background="@color/colorGray" />
+
 
         <LinearLayout
             android:id="@+id/chats_settings"
@@ -87,12 +79,7 @@
         </LinearLayout>
 
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="66dp"
-            android:background="@color/colorGray" />
+
 
         <LinearLayout
             android:id="@+id/notifications_settings"
@@ -123,12 +110,7 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="66dp"
-            android:background="@color/colorGray" />
+
         <!--
             <LinearLayout
                 android:id="@+id/contacts_settings"
@@ -196,12 +178,7 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="66dp"
-            android:background="@color/colorGray" />
+
 
         <LinearLayout
             android:id="@+id/about_help_settings"
@@ -232,11 +209,6 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="66dp"
-            android:background="@color/colorGray" />
+
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

@@ -27,6 +27,7 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
 import android.support.transition.TransitionManager;
+import android.support.transition.Visibility;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -532,11 +533,17 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
         int cx = (startView.getLeft() + startView.getRight()) / 2;
         int cy = (startView.getTop() + startView.getBottom()) / 2;
 
+        view.setVisibility(View.VISIBLE);
+
+
+
+
+
         int finalRadius = Math.min(view.getHeight() - cx, cy);
 
-
         Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
-        anim.addListener(new Animator.AnimatorListener() {
+
+        mAnimatorListenerOpen = new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
 
@@ -545,6 +552,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             @Override
             public void onAnimationEnd(Animator animation) {
                 mFrameLayoutReveal.setVisibility(View.VISIBLE);
+
 
 
             }
@@ -558,16 +566,43 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             public void onAnimationRepeat(Animator animation) {
 
             }
+        };
+        mAnimatorListenerClose = new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                mFrameLayoutReveal.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        };
+
+        mFrameLayoutReveal.setOnClickListener(view1 -> {
+            if (isOpen) {
+                isOpen = false;
+                animateItems(false);
+
+            }
         });
-        anim.setDuration(20);
-        if(view.callOnClick()) {
-            view.setVisibility(View.VISIBLE);
-        }
-        else
-        {
-            view.setVisibility(View.VISIBLE);
-        }
-        anim.start();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+
+
+
+
     }
 
     /**
@@ -637,6 +672,7 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             if (bitmap != null) {
                 BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), bitmap);
                 mView.setBackground(bitmapDrawable);
+
             } else {
                 mView.setBackground(AppHelper.getDrawable(this, R.drawable.bg_msgs));
             }
@@ -2084,6 +2120,8 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
             public void onAnimationEnd(Animation animation) {
                 searchView.setVisibility(View.GONE);
                 toolbar.setVisibility(View.VISIBLE);
+                mFrameLayoutReveal.setVisibility(View.GONE);
+
             }
 
             @Override
@@ -2680,11 +2718,13 @@ public class MessagesActivity extends AppCompatActivity implements LoadingData, 
     private void showStatus() {
         TransitionManager.beginDelayedTransition(mView);
         statusUser.setVisibility(View.VISIBLE);
+        mFrameLayoutReveal.setVisibility(View.GONE);
     }
 
     private void hideStatus() {
         TransitionManager.beginDelayedTransition(mView);
         statusUser.setVisibility(View.GONE);
+        mFrameLayoutReveal.setVisibility(View.GONE);
     }
 
     /**

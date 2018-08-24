@@ -19,7 +19,7 @@
         android:background="@drawable/bg_alert_call"
         android:gravity="center"
         android:padding="36dp"
-        android:text="@string/icon_crash"
+        android:text="@string/permission_alert"
         android:textColor="@color/colorWhite"
         android:textSize="50sp"
         android:textStyle="bold" />

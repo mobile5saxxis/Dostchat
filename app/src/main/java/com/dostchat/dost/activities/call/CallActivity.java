@@ -306,7 +306,7 @@ public class CallActivity extends Activity {
             Toast.makeText(this, "Video Record Started", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(this, "Video Record Stoped and saved to phone storage/Dost Chat/record.mp4 ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Video Record Stoped and saved to phone storage/DostChat/record.mp4 ", Toast.LENGTH_SHORT).show();
         }
 
 }
@@ -349,7 +349,7 @@ public class CallActivity extends Activity {
             mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
             mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4); //THREE_GPP
-            mMediaRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/Dost Chat/Record.mp4");
+            mMediaRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/DostChat/Record.mp4");
             mMediaRecorder.setVideoSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
             mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
             mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);

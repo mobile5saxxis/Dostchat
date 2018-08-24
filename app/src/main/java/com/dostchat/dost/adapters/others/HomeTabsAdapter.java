@@ -62,7 +62,7 @@ public class HomeTabsAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "Discussion";
+                return "Chats";
             case 1:
             default:
                 return "Contacts";
